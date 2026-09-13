@@ -1,0 +1,1527 @@
+{
+  "generatedAt": "2026-09-12",
+  "sourceCount": 95,
+  "pdfCount": 190,
+  "files": [
+    {
+      "courseId": "comp-248",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25590,
+      "sha256": "5ff5c4fb3cfff84a3104061ffd6e299a52cdfcb0f884764610d3d0158635fb48",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-248",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 26177,
+      "sha256": "e8207f9e650b0af9caea15937282c440b1e89d6d5a708a3f3b961587f86b796e",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-287",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25526,
+      "sha256": "435d121ae0fe9fd9f236ede73f23df2dad89ec2d2f55f69c0c291cf5540f5daf",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-287",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25823,
+      "sha256": "24e554c461fba681c1c05584817261fc1a11e0e2b38950b84f9a7abf8a576b8f",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-352",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25308,
+      "sha256": "ef73adb86b565283e953c189f4588134224cf8fdca439a4fbf04d60c393bafbe",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-352",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 35101,
+      "sha256": "c7bdec51d4930f72ec91fd38ca5a004029d28389eb8cea2a8a06b64486aa7b2f",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-108",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25805,
+      "sha256": "edae40bab2cc8eeeac15e691bfb2c2a2af4dc9655e4f29bd44785f138db75651",
+      "kind": "reflection"
+    },
+    {
+      "courseId": "comp-108",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 26226,
+      "sha256": "8b3c204541be1d21107ddb9d57f7eea51aff1c1ac28536220b77efe4df6d79fc",
+      "kind": "reflection"
+    },
+    {
+      "courseId": "comp-208",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25806,
+      "sha256": "a7be98054bce8519f56ab64d080a67314b4763d5206fd9f3ca84212617c7cee1",
+      "kind": "reflection"
+    },
+    {
+      "courseId": "comp-208",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 26220,
+      "sha256": "b50b2f4aa888d3f5a926cb684c35001f91fab2c15a298e758cc9a357332f3b09",
+      "kind": "reflection"
+    },
+    {
+      "courseId": "comp-218",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25687,
+      "sha256": "d0590bfa59f502b3a2ee0f32516f12aee3144686a9089857bd8b6bd62fdbd235",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-218",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 26125,
+      "sha256": "9dfba3d3d090f2e38502d71ceaf2cfbdbb78c60086058684852ca54c1025c8b2",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-228",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25276,
+      "sha256": "7def76791613f63a61a1e4746ce3b3a1fb3b04945933f36b08a79122696c15e4",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-228",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 26659,
+      "sha256": "7c0885502fdf64b20430e37c3b47cf5da810d91a559d4cbab12acf121f3a1268",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-232",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25187,
+      "sha256": "2b385cb08e53803fb81ffdd3540ce832e8b822531f8bdd417bc705858f3f3b49",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-232",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 34146,
+      "sha256": "c00caf07cdc4215c579f50330add2a3738aacc0d6819184e9aefc838d30dcdd1",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-233",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 26181,
+      "sha256": "d19533d1e66170cb03eef0e5588404689f9dd5a8f91eddd65591309d5ad96f8f",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-233",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 35625,
+      "sha256": "869fb77711794862c45c208f28f3f617a4ab71d14f0b88f9b959ff0a11032dea",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-249",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25430,
+      "sha256": "127ff3032d8fba28cc7ed711ab0c65fc55f429b0ae5bcd2a819c34df21a54107",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-249",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25862,
+      "sha256": "8f8a24527aa2bc56044f78008972d869d38ed8244f75586abd7f6f732bdff87a",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-326",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25099,
+      "sha256": "7498034276d6582e05ffa63224754878b12cdb39b1b73d9e967d0abe05639399",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-326",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25814,
+      "sha256": "e295782a271df324e3e7b67e869376c21282e9ef7077e7f833b85f87021972b7",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-333",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25310,
+      "sha256": "3586809cc66b247152cfe1d6f27225625fee4c29012d11ed1657462e2d5dc702",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-333",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25597,
+      "sha256": "4e7341bb905213308af1975d6acf28525431721c837fc825f5e6641e4db95619",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-335",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 43322,
+      "sha256": "86358e0a2eb4878c1dddea48cefd52c85f8151f026a309633061f4d8fda39b7a",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-335",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 26170,
+      "sha256": "4d81cd879319aa3bf59f0b354f987dd193c47b3f2f1c1cc1d0c7ec63f93033e4",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-339",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 24911,
+      "sha256": "5fab7c2dc29b90127cdd76882a774115a7051f73fb575393d36bbb63765d8e7d",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-339",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25612,
+      "sha256": "8b35ec8b0d899d9ca3121303410f9d22acba2f57ab74b2e064acaaaf0e7ab62c",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-345",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25685,
+      "sha256": "51c6cf1fa02640d33d26c273213549c8e6cfc6b184defd22bc98129531221040",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-345",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25907,
+      "sha256": "bf0ce06394228b4e443e11b2f851d47dea68293e3755cf78210666ec3114211b",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-346",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25551,
+      "sha256": "ef0bd31efebc4a8af8f59ee7828dd28e342602a7316aa2b7309cb48d3a40161c",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-346",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25548,
+      "sha256": "8bd2fe5495f406b3c08fc0370b04739e9090fafbf0fb57397b42184117d92bd8",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-348",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25680,
+      "sha256": "e6688dc17ab471a5f7df3ad10f1024435df684e432f76c8800f5a76dab260d01",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-348",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 26147,
+      "sha256": "0299c38df8078716927cc805ad2ff74c1432c1f18b367e915c213b56706a7bbe",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-353",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25805,
+      "sha256": "c635f193fae4be8643530c28c128fd367ffa9375753686506199ab92afde2ff9",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-353",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 26145,
+      "sha256": "a67ecba1afbc21c1ff6ae90efb208db1c9aad32975407d4e9f755926f847c16c",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-354",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25700,
+      "sha256": "d006c5b9271e96784323661b67b0f3083fe4b22a8790f0e6be8f83787f0923f8",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-354",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 26093,
+      "sha256": "a3182bdbb55c024ff9e182c9dc2f5aa49bcd3f49a1e289341e102aa10b3ac364",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-361",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25608,
+      "sha256": "e87fdc5a74106236c7174175c4254047e45ec8d118aeae1e421b7ad59c34e479",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-361",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 26286,
+      "sha256": "4fc010eabf08b28ed0bfa76b5a3c1305b5c1fc522a61309dba7c8604f7da9be4",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-367",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 34063,
+      "sha256": "e33ea37d5d9fe7d0a45e831a1d00777928a7d1f01e2b24ac024f063946a131bf",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-367",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 35464,
+      "sha256": "f74706d07d642d934c99a341ea789028a320eaed0d04990c6a9a7e1c85c3d38f",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-371",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25471,
+      "sha256": "6c34fbf6904a4a1be8d905641ed9f88a053ca0f1a9ad16f726bcf360c38c67ea",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-371",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25686,
+      "sha256": "ecd068934652775ed47804c5d792371c56c8d581a6c713daa4ab9848c06caf23",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-376",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25459,
+      "sha256": "c9d8a6eb5db3cfee41da4a17b7d7e0b8215d64583ccc35e60d479d6ae3935263",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-376",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25730,
+      "sha256": "f172b5db6189c941b1d64575c9c1e4e780667dc769539feb9aecd8e05e8c0ce5",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-425",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25381,
+      "sha256": "cf105c7cb70e3016aeb5b545b1db24d821b8a97594ed0aea3168a980a341af1a",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-425",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 26054,
+      "sha256": "80bfd54fae103c88641c21213c428f30585a0ca959af86d8f50f93d84edf0752",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-426",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25444,
+      "sha256": "c85ee541fabf9f0f4f1e74eb3cd22657b669f3b5db634e599280c39950a1520d",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-426",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25336,
+      "sha256": "65a2374cc13fa4bea43434105df593a38e713ba37b1a317c5fac5f9deedd8dd3",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-428",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25126,
+      "sha256": "d8f3a8af534743edb7438a7a670c850a630354140e6a977456275f7298934690",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-428",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25990,
+      "sha256": "df3bec6c40b2ab9aa7ecdc1c3ca0ebf6dd2ab57e43fe56950f98cfe1b92db797",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-432",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25294,
+      "sha256": "e57fff8deb0ae67f7c5336b4f8cc4d3ba84bb7aa428d99f14f88694ffee8ec8e",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-432",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25740,
+      "sha256": "e12eb90d617688d027b21f1c90c622fe91018b6811b7059dd732ec7cb7d21ded",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-433",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25887,
+      "sha256": "c2fc02878c236b6f364e894cfe70bd5e644de82193b9a73ac1d253345757418d",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-433",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25813,
+      "sha256": "205e5aff3268c900a1e9bbb74098d42dc40dce01d16e238470a1a9ad85face2b",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-438",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25460,
+      "sha256": "3f7d32be6fae410e75cc7dbfbc547cf6e296ea142f7b4254c9604f652029d651",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-438",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 35138,
+      "sha256": "279e8aace474cad5e217f65a28d9d2058480afd672c3a085d6d2af06412544aa",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-442",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 34468,
+      "sha256": "3ab763456a51f54939562a8d37eea2eb01f8362b2a1bc5e5c905c887fbda940c",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-442",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25708,
+      "sha256": "43a19d87275af0032b8b094caa62721ee0832fe1d04ecbd1f6d5c73167c6002e",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-444",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25315,
+      "sha256": "8b8299896da92058b48875731f989168b6f975da9abe83b57c3f113d8500e84a",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-444",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25806,
+      "sha256": "a52b5a7bdc42fda0325ca2e2a4d4cdabb0e348271757426ef43a5979542be864",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-445",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25787,
+      "sha256": "db0409ad0e90ebc95561eb6036f40ab3337d3c0993cad6f9da4dd5782d83f9f2",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-445",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25756,
+      "sha256": "c78c09427696d9afd0c2d75948ec88c504e7f82a3719a7e52ddf3acfff1d4c1a",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-451",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25508,
+      "sha256": "9fa3d31c57767b0834bc55acf074bdbc50c89fa08c0bdfa1e58b5f2ed29c6e06",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-451",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25703,
+      "sha256": "8af0655e5346940612a6b70e3c1b272e0e4a6407dba3dd49823f51549e8caa58",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-465",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25698,
+      "sha256": "b810ab5671529af2da7f6d955610bd43a8892ad26fcbfffad65b1a99f035ae42",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-465",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 43365,
+      "sha256": "7b2af499fa99c3b65cb498170ddc027a2acaaa3ee0ff00d4c74683ee8650bef1",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-472",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25323,
+      "sha256": "db38c36cfa5528923ff0bc213d62182ac96295697491020b4d79447144fe353c",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-472",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25926,
+      "sha256": "4430b640478e013559fbd66ca32100853e99661c0ab5aa88ff9ba75305889013",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-473",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 24991,
+      "sha256": "43829dba1c3d691fabc1f01f79b8ab335967f6f4b894c43ffb10b10fbe3567ec",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-473",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 26029,
+      "sha256": "5e20aa672d9bc025cc50f38c69f1c199f19bef55493c8917f845a53986040bfe",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-474",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25397,
+      "sha256": "9d534c4f3c35f2ad745f3159ddecced1815daa6fe75a4d38ab1a41247dd13df5",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-474",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25607,
+      "sha256": "02e5276292edfd47b6ec0ece52c338d5adc9bad8ae23406ed95d93b6e048d95a",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-475",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25666,
+      "sha256": "3a0801d77d6af039d1743676e845c04b9d8ba1b4f060314fafa21fe4a2b8b323",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-475",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25775,
+      "sha256": "f812b470e2d5f96f13077278689274dfd5694fe69adc3621f5c1f96d05a09663",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-476",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25153,
+      "sha256": "2973f3f032a091fff83c4de24b69707aba589adc30c99ab82d968b964d23846b",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-476",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25601,
+      "sha256": "626f00cd80f941c9b315165b5573bfbf7d2674bda625597a4899baa9febb5557",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-477",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 34459,
+      "sha256": "bf2a8cd27740178e16317143054437a914ccff978924796f9d70343d6ca7d0b0",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-477",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25500,
+      "sha256": "b6cb611ff831280f188a72abeaaa783a55dde6586b55713a82707610a9c91236",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-478",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25499,
+      "sha256": "c72eeab02162a467de9356f460b5b806aca8a54c25d58203e21f30b793328d4e",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-478",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25723,
+      "sha256": "9928b950d969ddaf19e02e39a2161e59355cb60ce813ca9e38d30ab5524c9181",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-479",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25837,
+      "sha256": "7137b62b2d89eb64ef9a1f498cd39b477663fcca72083ba350e19563835fb84b",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-479",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 26155,
+      "sha256": "9c9cab65d62b1665fedded4222eb8d6e5af08e6deaa711a4d6ec8c0dc08a423b",
+      "kind": "mock"
+    },
+    {
+      "courseId": "comp-490",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25354,
+      "sha256": "fd4231fe23ee931fd81bcf31e532c97e9855ddae2fdd25bca8c5c0ff6a01e584",
+      "kind": "project"
+    },
+    {
+      "courseId": "comp-490",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25879,
+      "sha256": "f6d52c99798f34e5182ac763702003b8a2fea43b3ec616a21c3a8178a5d9cd6e",
+      "kind": "project"
+    },
+    {
+      "courseId": "comp-492",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25396,
+      "sha256": "72732b98a1497d57e3b8bc81d33bcd2c114cdb6c67fe6219f106aa9ca5f3276d",
+      "kind": "project"
+    },
+    {
+      "courseId": "comp-492",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25896,
+      "sha256": "f545f83aa1fb964d46fd999ea6ff5d2060ab52cf5070d9684040422ded6cd101",
+      "kind": "project"
+    },
+    {
+      "courseId": "comp-493",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25867,
+      "sha256": "b557f0f6a995604b6a4744e9cc233aa56415c3e5d7d729fd1224a1b2d40b7675",
+      "kind": "project"
+    },
+    {
+      "courseId": "comp-493",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 26382,
+      "sha256": "9da5294369f2c3b07a571504ef08af34539e81559a5f56d92c3d25e51247801d",
+      "kind": "project"
+    },
+    {
+      "courseId": "comp-495",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25181,
+      "sha256": "0f045f03c97f083cb53a9b3f3f0f92117626bc594d378fba4dc8ee353d4bffce",
+      "kind": "seminar"
+    },
+    {
+      "courseId": "comp-495",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25299,
+      "sha256": "f225688a1648c81968a5443472f981f1c9f653d76b8df2233ff2a4f401cdaca0",
+      "kind": "seminar"
+    },
+    {
+      "courseId": "comp-498",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25915,
+      "sha256": "dd9ae9cfb0b8f739f93d719b844f2c2dff2a1c27f26cc195904e14d5aef06813",
+      "kind": "topic-template"
+    },
+    {
+      "courseId": "comp-498",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25951,
+      "sha256": "a41e8dfb0bb33d7987a1c4a1a9ada87cf3cc639567aee714bc25ec9270acd3d9",
+      "kind": "topic-template"
+    },
+    {
+      "courseId": "comp-499",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25945,
+      "sha256": "3612c4253dfe2aac6c0c70ef84edcae8c0580b980fd473140e646d93653e9027",
+      "kind": "topic-template"
+    },
+    {
+      "courseId": "comp-499",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 26089,
+      "sha256": "f6acaa0e14641abef219a4b27f624d9035cfc672bba5260e8ef58ec57ef65c2b",
+      "kind": "topic-template"
+    },
+    {
+      "courseId": "soen-228",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25249,
+      "sha256": "941e1af7695ebfbd56985746ae16ec08ab56eaf3f8254735f7a40d31d45330f1",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-228",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 26580,
+      "sha256": "a97198bf97c799748414717b2bd70f43e3bcbba0c338a3c7f9a1f3f6463edd02",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-298",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25316,
+      "sha256": "d26043bd6b27432820b7dba047fb18583ee0f9e3be77ebf3d7fb67abd38a18a5",
+      "kind": "lab"
+    },
+    {
+      "courseId": "soen-298",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25927,
+      "sha256": "f6233cec5cbc10ebc44227503f5ed53fa07be94bce05b15f95afddde9c453920",
+      "kind": "lab"
+    },
+    {
+      "courseId": "soen-321",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25469,
+      "sha256": "fe3d3b76d52c6bb1dbd64fd883851cf3470f0faab8c1375e0d10fffbfeb6c5b7",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-321",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25989,
+      "sha256": "22744438f3c0b20b7f3460fb6d926d0089db90fd07dafa79530a03d38338c0c5",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-331",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25651,
+      "sha256": "89805b1d553d8bb1c9fd593bd4386929b172891c0280edb4bb2f48b1be215c5e",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-331",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 34323,
+      "sha256": "fd6d3815c2b78a10cfeadc30e2487ae7ac73d2c8b8d55803482d207cb9136c01",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-341",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25429,
+      "sha256": "76a799104afd29d8465562e01077444bb91bd5727a7736cdd44c7ddd7ed691f0",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-341",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25693,
+      "sha256": "bbb1b6e0731e24e34fbf31179565cd7591d7132b2d6f85d2741a14a25e90bab9",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-342",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25982,
+      "sha256": "d3fe6fc6d0c7027493519870cc7160ca264effaf3f74e18e30259ee7169c5491",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-342",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25904,
+      "sha256": "256e04ce46f61a860c988871d19bc4a4efa93256c49eca82b19ca53fe01b5649",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-343",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25137,
+      "sha256": "c1bace9e7537cccfb133c1ec724505550152c500aa0f311066a054a88757dfc5",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-343",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25518,
+      "sha256": "e023750e470da8d17d4715eb29b4ccc7284c357d7c7297a5aa96062dc014690b",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-344",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25422,
+      "sha256": "cfce3b5b4b591a9137506b3dfd87bc9de5437a9eecbd8572a14b81e63d7b9275",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-344",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 35014,
+      "sha256": "57bb0d2fd0cea3884759929f2e22fe56860baad7fc29eb8d3ac5110ef6c173f1",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-345",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25625,
+      "sha256": "38f5146bd4a7e8b7b2dc8fdab20575e9915b19659bd266c4b3934d044949f016",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-345",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25737,
+      "sha256": "f7ee2e24716629006ff2ecf2a918593a13f51d221de6303808214623c033ec38",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-357",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25600,
+      "sha256": "010fe5f35ae0174ffcf94fe3df0b8f6905122aedfeb2c22d1feaea8b15131bf3",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-357",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25755,
+      "sha256": "a9a98b26ac56e22b6064b24c07e7a122594cac9aa4a631fdb368c829ad1f917c",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-363",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25391,
+      "sha256": "fe68c3339254c27c697910f3b401352fdb9bc8cdffe70c949aae697040099a41",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-363",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25571,
+      "sha256": "b109630e8e43e2536e0df4071d9b199cfbf012d9c06a3cbde79a652b39c1385f",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-384",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25529,
+      "sha256": "fb6693cb200a63660a9e758e155594639ff7dcbcd3b377612868ce0d1fbfdb29",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-384",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25953,
+      "sha256": "caf437b4eb047618a13236268c8da0ac6dbd96e7de5d11b685abb72aff1356e7",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-385",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25117,
+      "sha256": "bfbae1f949727bef69b81027e3cba22f6c223383012a78392efa918cdb68fbd2",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-385",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 35569,
+      "sha256": "9fe46b966ccac681dd4838bea4b7a92bd71c93d71cc61056c0df8b91454549e2",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-387",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25794,
+      "sha256": "74ffc3610d460c019e74a290ff48e16e89928ef3bb6efa393d9f2cb8aa3ca396",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-387",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25781,
+      "sha256": "720d2e4e8481caedcbef88fe94feff8a5fa0916725756cfa970fafcd80d5c1ef",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-390",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25518,
+      "sha256": "265aa4601c21590d3a7183ccdff8c669b7166b1cbe63d86e98fe9776ad808f94",
+      "kind": "project"
+    },
+    {
+      "courseId": "soen-390",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 26020,
+      "sha256": "fd098c0f476280e39b01c952d181c24bda02a1afb24d6f194e10bcfbdb264437",
+      "kind": "project"
+    },
+    {
+      "courseId": "soen-422",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25552,
+      "sha256": "599034a379f15fec5b6582f70bc2c2a852c07a9fdee40cbc1636015bbe9aa34b",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-422",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25764,
+      "sha256": "42c459b77724a0c2625a5d97b4caf033f789b5c534d11eb1bc70227806df92d5",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-423",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 24956,
+      "sha256": "15b78535870b41286a279d2d3292b430730a08ab85361068f014be1370a98f82",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-423",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25635,
+      "sha256": "1028516de92776b36af11842c45d35b92adda96d2b47f59eaaee0e5387288443",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-471",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25331,
+      "sha256": "e026c16bef1a6e1123085df8fe06b23a7d1e311bfb5fb2ea4c3edccf7ead19d3",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-471",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25456,
+      "sha256": "076b1be30c6af341a5dadd6ac082aacb5259a04ddd7c9bc0fc5e4da2d7cb6502",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-487",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25432,
+      "sha256": "4acd9bc52471ac440f99f4ff2a21b522dc336342d44c28eaa060c493d61a60ea",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-487",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25933,
+      "sha256": "8b6c822df21b31bed229ed05d2e283e27cf9ba2c3e7322308c8828bf674a5d5e",
+      "kind": "mock"
+    },
+    {
+      "courseId": "soen-490",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25516,
+      "sha256": "27a3f35e3b4acfb952a4ca174b068aca380af40811f1b50700b18be143713fb0",
+      "kind": "project"
+    },
+    {
+      "courseId": "soen-490",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25980,
+      "sha256": "388d0c08327a24f1caa64500ea38b1ea15e429414ce2c96877ceb0c93cf0c08c",
+      "kind": "project"
+    },
+    {
+      "courseId": "soen-491",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25450,
+      "sha256": "11351d7c6cc0adbb8027014f4f52795c8f119df74481c8dbe671e603818ef085",
+      "kind": "project"
+    },
+    {
+      "courseId": "soen-491",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25929,
+      "sha256": "613f2846094bb0bfa2a87f02134f4ac7e16aadf930619d8e6c1ceb0564bbd0b1",
+      "kind": "project"
+    },
+    {
+      "courseId": "soen-498",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25910,
+      "sha256": "d4570e1e164da64c476d5e9bb7cd6ba5016b378a9c92d31909a870554c3e1237",
+      "kind": "topic-template"
+    },
+    {
+      "courseId": "soen-498",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25907,
+      "sha256": "50f0e0e64b8ee87c5c842bac0e5012e21a964d30d595ecaae0e631c674714dd3",
+      "kind": "topic-template"
+    },
+    {
+      "courseId": "soen-499",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25926,
+      "sha256": "63ddfb70444132d5b5f1056b681f9a68602cbf3c02c110b716dd31bdf476a29e",
+      "kind": "topic-template"
+    },
+    {
+      "courseId": "soen-499",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 26007,
+      "sha256": "c0f0864b32939d70d958730e1d19a16d786830c0db4f5e805f110692ff22948f",
+      "kind": "topic-template"
+    },
+    {
+      "courseId": "engr-108",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25649,
+      "sha256": "e06320136c61e313e02080755fefac430671371cc263cb50cc890ae795147445",
+      "kind": "reflection"
+    },
+    {
+      "courseId": "engr-108",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25992,
+      "sha256": "68f295b09844e9538b7e4b4d32addbcb1aee51e651fa005a0b24ce63efb7bebf",
+      "kind": "reflection"
+    },
+    {
+      "courseId": "engr-201",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25500,
+      "sha256": "9c11d45bad7f7e7599353a2a92f1f7efe8586fadd3fa1bc1874497e3dbe189e0",
+      "kind": "mock"
+    },
+    {
+      "courseId": "engr-201",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25518,
+      "sha256": "db8f28de515daae7ae86fcb29abbfa467cf6986ceb11cf639da64dead36594d8",
+      "kind": "mock"
+    },
+    {
+      "courseId": "engr-202",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25697,
+      "sha256": "bba3c1b583fc9e0b2d86c78d8fb43197dd72aa1717be7b047498711c577d2069",
+      "kind": "mock"
+    },
+    {
+      "courseId": "engr-202",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 26070,
+      "sha256": "f526d59ad25c9786959c153fc00d3e0cc9313f2aa8ba8aca7ad04cc7bb89528e",
+      "kind": "mock"
+    },
+    {
+      "courseId": "engr-208",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25725,
+      "sha256": "8280fd5f789202a61ddca08b488def159be1e76a6adb8f38df944834490f0237",
+      "kind": "reflection"
+    },
+    {
+      "courseId": "engr-208",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 26069,
+      "sha256": "1f12bdc05dc5adce7724f4d6e776544d484f2555b93c619bfdc61cdeb8f083d7",
+      "kind": "reflection"
+    },
+    {
+      "courseId": "engr-213",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 24498,
+      "sha256": "aa256692f602573b9a6c8836350670e0e3ffe4abfb8869aa1d03dd57acc32482",
+      "kind": "mock"
+    },
+    {
+      "courseId": "engr-213",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25045,
+      "sha256": "aea2f3d035721ab78b1a01478f3730696aa12917f3eb8571c113ff2d3af40fa7",
+      "kind": "mock"
+    },
+    {
+      "courseId": "engr-233",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 24829,
+      "sha256": "e7a294e6a20639eb4f3c42770a7fbed39117f5a09d2657f56998f4b229140ba3",
+      "kind": "mock"
+    },
+    {
+      "courseId": "engr-233",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 34447,
+      "sha256": "7424450a531acfb8eff0a12e6009e658fc40f22d3c23c161bf00918f04c20ad2",
+      "kind": "mock"
+    },
+    {
+      "courseId": "engr-242",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25148,
+      "sha256": "6aa40c66730aa452a6febc80a56dd3c772a0337956317d17f867dbbd65d480c5",
+      "kind": "mock"
+    },
+    {
+      "courseId": "engr-242",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25117,
+      "sha256": "3c6e7dcf7a59f1403fba47d1e31cb9334d35296959539634d80964398f9ce9c4",
+      "kind": "mock"
+    },
+    {
+      "courseId": "engr-243",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 34315,
+      "sha256": "933152e614818c0e43070e740caeabb32d631ffb594e1087d11a1ee8c62653d7",
+      "kind": "mock"
+    },
+    {
+      "courseId": "engr-243",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25461,
+      "sha256": "ca724af6a11fd39ad5b1aad92ff503d52fa25a91477bbc8ef921e726a47d93e7",
+      "kind": "mock"
+    },
+    {
+      "courseId": "engr-244",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 34273,
+      "sha256": "7f59695e4ac8ff195b6a375a400e8beb88c7e1b9f47a01b03aa60ee7d72e3a35",
+      "kind": "mock"
+    },
+    {
+      "courseId": "engr-244",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 35094,
+      "sha256": "33da7e23244a99c05b0cc1eab3b9b503a3aa4eaaf509cc228d0842b4941b4204",
+      "kind": "mock"
+    },
+    {
+      "courseId": "engr-245",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 24938,
+      "sha256": "1a3bf1ee7374bb20e83906aa2d0b74e1a9a72efc9c81637737ab48c0681f92dc",
+      "kind": "mock"
+    },
+    {
+      "courseId": "engr-245",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25644,
+      "sha256": "f48889a69522ef5bbd56d2cd8bc78cdae37e6b6d26ba146ac2b1c6696eba9eb2",
+      "kind": "mock"
+    },
+    {
+      "courseId": "engr-251",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 34701,
+      "sha256": "2e5e3daccd3bdf40cff221664232b03a03641466b11f131419ab278c0edc6846",
+      "kind": "mock"
+    },
+    {
+      "courseId": "engr-251",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25803,
+      "sha256": "e4896a5afeffa1d9ff545b996583b8870439f30fa8a9d2774a394f83d92e267a",
+      "kind": "mock"
+    },
+    {
+      "courseId": "engr-290",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25406,
+      "sha256": "e846d8cb6166fd72f1f3f18270850d4e28d0d8725e9f77c7aa15bab2a8baefab",
+      "kind": "project"
+    },
+    {
+      "courseId": "engr-290",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25837,
+      "sha256": "7e1fb71a89d2a786ed9f2be688e57a71586181cf5f5d8aeb87e7df683506db23",
+      "kind": "project"
+    },
+    {
+      "courseId": "engr-301",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25690,
+      "sha256": "b304c84afed6d16b907349b9b26554789da759bced6b09379a06c6cc00c7480a",
+      "kind": "mock"
+    },
+    {
+      "courseId": "engr-301",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 26360,
+      "sha256": "4234473b9ad014958fdda548cf8b121d24519f96541d6894f0dfc024738a79a0",
+      "kind": "mock"
+    },
+    {
+      "courseId": "engr-308",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25835,
+      "sha256": "1cf9089e6cf0134cf01987e3f4b57ea862815dfa8261119ed5d670971f9c6559",
+      "kind": "reflection"
+    },
+    {
+      "courseId": "engr-308",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 26135,
+      "sha256": "4906140bac510c6379f23b696bf0f153e091fc9578fc7c96ae65bf0ee481002d",
+      "kind": "reflection"
+    },
+    {
+      "courseId": "engr-311",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25197,
+      "sha256": "0ef9c0ae8f6f48bfd0afdcb67b87edeba2e1eb4ebcab3e4eec17e2e0cb11b3f1",
+      "kind": "mock"
+    },
+    {
+      "courseId": "engr-311",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 35348,
+      "sha256": "5b44e63fef1d0cfd6f25575ef2e8ab4c3a066a8eccd49d19079a064d8d617030",
+      "kind": "mock"
+    },
+    {
+      "courseId": "engr-361",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 34797,
+      "sha256": "e1b1c6b92b8babc67bf966804ba9777045f29288a6ed89765878e05d0459780f",
+      "kind": "mock"
+    },
+    {
+      "courseId": "engr-361",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 35574,
+      "sha256": "486f785ed6cd0d03b35dba242199a2c67bbae54381e60904838b6b9b65eb69a1",
+      "kind": "mock"
+    },
+    {
+      "courseId": "engr-371",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 26051,
+      "sha256": "6b03a261f2a6aee2b8fdf9b706def782096656f5fefe2763d93f67841581f8b7",
+      "kind": "mock"
+    },
+    {
+      "courseId": "engr-371",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 35393,
+      "sha256": "a383a4d51e6ca3bd8d9b414e0e54b3b4f335957df34c3d482457ec728f71a23e",
+      "kind": "mock"
+    },
+    {
+      "courseId": "engr-391",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25431,
+      "sha256": "dc521c459c8b8c9295d56ea4902f64e9d68b0b75f4c184f9f5f071482a293fd3",
+      "kind": "mock"
+    },
+    {
+      "courseId": "engr-391",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25946,
+      "sha256": "f8fdfbd86c240786fc271f22b38bfa2c72441691943f8f5118f07053063031d0",
+      "kind": "mock"
+    },
+    {
+      "courseId": "engr-392",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25419,
+      "sha256": "19a08f26959fb96308b0f6834b68b9cd811e8b95925503b2a1badd125fe54751",
+      "kind": "mock"
+    },
+    {
+      "courseId": "engr-392",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25522,
+      "sha256": "0be14f88dd7db60f5431df0d986d620bd72be7ba5b5908c0ceb736acf2705e70",
+      "kind": "mock"
+    },
+    {
+      "courseId": "engr-411",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25199,
+      "sha256": "57e641d691660fed6c6056ed9d3e35756561ed254c58c7ac57a184357f85af79",
+      "kind": "project"
+    },
+    {
+      "courseId": "engr-411",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25649,
+      "sha256": "3d826802e08f38a82cd1c4f9ab3e755cd82695ccfd36b77c6e23e34b7f2b5c38",
+      "kind": "project"
+    },
+    {
+      "courseId": "engr-412",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25236,
+      "sha256": "634b10e0770653dc89e3cb49e0aa37551c31f1103736f38e29c58742c7d8a2b3",
+      "kind": "project"
+    },
+    {
+      "courseId": "engr-412",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25633,
+      "sha256": "a0d7c25b4a1e2b7e3eddc08459e3f0bb98f950f228fa0de49a86dd52e73c37c1",
+      "kind": "project"
+    },
+    {
+      "courseId": "engr-472",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 34335,
+      "sha256": "f5108aba6ee8cfffebb141037b0db09ecc7999e3be2fc0f4cc3301494bab4733",
+      "kind": "mock"
+    },
+    {
+      "courseId": "engr-472",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 35918,
+      "sha256": "b99abead19cdddf5749e48112175cfd4f4a69c789a559f5335f746d8d049e610",
+      "kind": "mock"
+    },
+    {
+      "courseId": "engr-490",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25581,
+      "sha256": "3f917a0df8c03479948be8a71ac50f14afa57ecb7f5f96119db5fdd9630dbf09",
+      "kind": "project"
+    },
+    {
+      "courseId": "engr-490",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 26069,
+      "sha256": "4db09c76adf097292c3622927c098256b5986800622f48eecf1ad1f77c20d0cb",
+      "kind": "project"
+    },
+    {
+      "courseId": "engr-498",
+      "productId": "core",
+      "pages": 2,
+      "bytes": 25722,
+      "sha256": "1d221c70222ba9a6255cae25dfaf00c7db8b1f112057ff38b136a8c652f5626d",
+      "kind": "topic-template"
+    },
+    {
+      "courseId": "engr-498",
+      "productId": "advanced",
+      "pages": 2,
+      "bytes": 25728,
+      "sha256": "b1b6580d0f9ea2494f9f93cd99259afbac3237605cad60239400f0690d05526a",
+      "kind": "topic-template"
+    }
+  ]
+}

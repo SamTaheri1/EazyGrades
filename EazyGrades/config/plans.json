@@ -1,0 +1,53 @@
+[
+  {
+    "id": "basic",
+    "name": "Basic",
+    "amount": 900,
+    "currency": "cad",
+    "interval": "month",
+    "intervalCount": 1,
+    "period": "month",
+    "description": "Focused practice for one course.",
+    "scope": "selected",
+    "features": [
+      "Choose one available course",
+      "Core + Advanced practice PDFs",
+      "Access while your plan is active"
+    ],
+    "priceEnv": "STRIPE_PRICE_BASIC"
+  },
+  {
+    "id": "pro",
+    "name": "Pro",
+    "amount": 1900,
+    "currency": "cad",
+    "interval": "month",
+    "intervalCount": 1,
+    "period": "month",
+    "description": "More courses. One simple plan.",
+    "scope": "all",
+    "features": [
+      "All available courses",
+      "Core + Advanced practice PDFs",
+      "New sets as they become available"
+    ],
+    "priceEnv": "STRIPE_PRICE_PRO"
+  },
+  {
+    "id": "semester",
+    "name": "Semester Plan",
+    "amount": 4900,
+    "currency": "cad",
+    "interval": "month",
+    "intervalCount": 4,
+    "period": "4 months",
+    "description": "A full term of focused practice.",
+    "scope": "all",
+    "features": [
+      "Everything in Pro",
+      "Four months per billing period",
+      "One plan for your academic term"
+    ],
+    "priceEnv": "STRIPE_PRICE_SEMESTER"
+  }
+]
