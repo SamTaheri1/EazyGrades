@@ -51,6 +51,10 @@ function Modal({open,onOpenChange,title,description,children}:{open:boolean;onOp
 function Price({plan}:{plan:Plan}){return <div className="price"><span>{new Intl.NumberFormat('en-CA',{style:'currency',currency:plan.currency,maximumFractionDigits:0}).format(plan.amount/100)}</span><span> CAD / {plan.period}</span></div>;}
 
 export default function Store({page}:{page:string}){
+ useEffect(()=>{
+  // Start each page at the top, while preserving intentional anchor links.
+  if(!window.location.hash)window.scrollTo({top:0,left:0,behavior:'instant'});
+ },[page]);
  const [courses,setCourses]=useState<Course[]>(initialCourses);
  const [plans,setPlans]=useState<Plan[]>(initialPlans);
  const [user,setUser]=useState<User|null>(null);
