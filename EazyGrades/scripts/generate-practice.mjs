@@ -62,7 +62,7 @@ try {
    }
   }
  }
- writeFileSync('data/courses.json',JSON.stringify(courses,null,2)+'\n');
+ writeFileSync('data/courses.js','// Generated course catalog. Edit course descriptions and coverage notes here.\nconst courses = '+JSON.stringify(courses,null,2).replace(/^(\s*)"([A-Za-z_$][\w$]*)":/gm,'$1$2:')+';\n\nexport default courses;\n');
  writeFileSync('data/practice-manifest.json',JSON.stringify({generatedAt:verifiedDate,sourceCount:verified.length,pdfCount:manifest.length,files:manifest},null,2)+'\n');
  console.log(`Generated ${manifest.length} two-page PDFs for ${courses.length} verified courses. ${courses.filter(c=>c.published).length} practice pairs published; 5 rotating-topic template pairs remain unpublished.`);
 } finally {await browser.close();}

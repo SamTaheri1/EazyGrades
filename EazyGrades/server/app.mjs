@@ -1,4 +1,5 @@
 import 'dotenv/config';
+import coursesDefault from '../data/courses.js';
 import express from 'express';
 import Database from 'better-sqlite3';
 import { z } from 'zod';
@@ -42,7 +43,7 @@ export function createApp(options = {}) {
   const webhookSecret = options.webhookSecret ?? process.env.STRIPE_WEBHOOK_SECRET;
   const plans = options.plans || plansDefault;
   const priceId = plan => options.priceIds?.[plan.id] || process.env[plan.priceEnv];
-  const courses = JSON.parse(readFileSync(path.join(dataDir, 'courses.json'), 'utf8'));
+  const courses = options.courses || coursesDefault;
   for (const c of courses) {
     identifier.parse(c.id);
     if (!/^(ENGR|SOEN|COEN|ELEC|MECH|CIVI|BCEE|BLDG|MIAE|AERO|INDU|COMP|MATH|PHYS|CHEM) \d{3,4}$/.test(c.code) || c.products?.length !== 2 || c.products[0].id !== 'core' || c.products[1].id !== 'advanced') throw Error('Invalid course record.');
