@@ -8,3 +8,15 @@ data/private-pdfs/
 test-results/
 *.tsbuildinfo
 *.log
+
+# Private exam PDFs and their rendered previews must never be committed.
+*.pdf
+data/practice-qa/
+output/pdf/*.png
+output/pdf/*.jpg
+output/pdf/*.jpeg
+output/pdf/*.webp
+tmp/pdfs/*.png
+tmp/pdfs/*.jpg
+tmp/pdfs/*.jpeg
+tmp/pdfs/*.webp
