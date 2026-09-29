@@ -1,4 +1,4 @@
-export type Course = {id:string;code:string;title:string;category:string;trackId?:string|null;description:string;practiceKind?:string;coverageNote?:string;sourceUrl?:string;published?:boolean;available?:boolean;products:{id:string;title:string;available?:boolean}[]};
+export type Course = {id:string;code:string;title:string;category:string;trackIds?:string[];description:string;practiceKind?:string;coverageNote?:string;sourceUrl?:string;published?:boolean;available?:boolean;products:{id:string;title:string;available?:boolean}[]};
 export type Offer = {id:string;name:string;amount:number;currency:string;checkoutEnabled?:boolean};
 export type Pricing = {single:Offer;premium:Offer};
 export type Track = {id:string;name:string;available?:boolean};

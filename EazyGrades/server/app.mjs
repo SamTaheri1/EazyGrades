@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import coursesDefault from '../data/courses.js';
-import { tracks, trackForCourse } from '../config/tracks.js';
+import { tracks, tracksForCourse, courseInTrack } from '../config/tracks.js';
 import { engineeringFields } from '../config/engineering-fields.js';
 import express from 'express';
 import Database from 'better-sqlite3';
@@ -79,7 +79,7 @@ export function createApp(options = {}) {
   const activePremium = id => !blocked(id) ? db.prepare("SELECT * FROM subscriptions WHERE user_id=? AND plan_id='premium' AND status='active' AND blocked=0 AND expires_at>? ORDER BY expires_at DESC LIMIT 1").get(id,now()) : null;
   // Existing individual purchases retain their original scope; new bundles cover both products.
   const purchased = (id,courseId,productId) => Boolean(db.prepare("SELECT 1 FROM pdf_purchases WHERE user_id=? AND course_id=? AND product_id IN (?, 'bundle') AND status='confirmed'").get(id,courseId,productId));
-  const canAccess = (id,c,product) => !blocked(id) && (purchased(id,c.id,product) || Boolean(activePremium(id)?.track_id && activePremium(id).track_id===trackForCourse(c)));
+  const canAccess = (id,c,product) => !blocked(id) && (purchased(id,c.id,product) || courseInTrack(c,activePremium(id)?.track_id));
   const publicOffer = offer => ({id:offer.id,name:offer.name,amount:offer.amount,currency:offer.currency,checkoutEnabled:billingReady(offer)});
   const viewUser = u => {
     const premium = activePremium(u.id);
@@ -185,8 +185,8 @@ export function createApp(options = {}) {
   if(options.rateLimits!==false) app.use('/api/auth',rateLimit({windowMs:15*60000,limit:20,message:{error:'Too many sign-in attempts. Try again in 15 minutes.'}}));
   app.get('/api/health',(req,res)=>res.json({ok:true}));
   app.get('/api/catalog',(req,res)=>res.json({
-    courses:courses.map(c=>({id:c.id,code:c.code,title:c.title,category:c.category,trackId:trackForCourse(c),description:c.description,practiceKind:c.practiceKind,coverageNote:c.coverageNote,sourceUrl:c.sourceUrl,products:c.products.map(p=>({id:p.id,title:p.title,available:availableProduct(c,p.id)})),available:available(c)})),
-    tracks:tracks.map(t=>({id:t.id,name:t.name,available:availableCourses().some(c=>trackForCourse(c)===t.id)})),
+    courses:courses.map(c=>({id:c.id,code:c.code,title:c.title,category:c.category,trackIds:tracksForCourse(c),description:c.description,practiceKind:c.practiceKind,coverageNote:c.coverageNote,sourceUrl:c.sourceUrl,products:c.products.map(p=>({id:p.id,title:p.title,available:availableProduct(c,p.id)})),available:available(c)})),
+    tracks:tracks.map(t=>({id:t.id,name:t.name,available:availableCourses().some(c=>courseInTrack(c,t.id))})),
     pricing:{single:publicOffer(pricing.single),premium:publicOffer(pricing.premium)},
   }));
   app.get('/api/me',(req,res)=>res.json({user:req.user?viewUser(req.user):null}));
@@ -234,7 +234,7 @@ export function createApp(options = {}) {
       if(input.kind==='premium') {
         trackId=input.trackId;offer=pricing.premium;
         if(!tracks.some(t=>t.id===trackId))throw fail(400,'Choose a valid track.');
-        if(!availableCourses().some(c=>trackForCourse(c)===trackId))throw fail(400,'No PDFs are available in this track yet.');
+        if(!availableCourses().some(c=>courseInTrack(c,trackId)))throw fail(400,'No PDFs are available in this track yet.');
         if(db.prepare("SELECT 1 FROM subscriptions WHERE user_id=? AND status NOT IN ('canceled','incomplete_expired')").get(req.user.id))throw fail(409,'You already have a subscription. Manage it from your account.');
       } else if(input.kind==='course') {
         courseId=input.courseId;productId='bundle';offer=pricing.single;
@@ -246,7 +246,7 @@ export function createApp(options = {}) {
         const course=courses.find(c=>c.id===courseId);
         if(!course||!availableProduct(course,productId))throw fail(400,'This PDF is not available yet.');
         if(canAccess(req.user.id,course,productId))throw fail(409,'You already have access to this PDF. Download it from the course details.');
-        if(!premium||premium.track_id===trackForCourse(course))throw fail(403,'Individual Plus purchases require active Premium and a PDF outside your track. Choose the course bundle for both PDFs.');
+        if(!premium||courseInTrack(course,premium.track_id))throw fail(403,'Individual Plus purchases require active Premium and a PDF outside your track. Choose the course bundle for both PDFs.');
         offer=pricing.plus;
       }
       if(!billingReady(offer))throw fail(503,'Checkout is not open yet. Practice PDFs and payments are being prepared.');

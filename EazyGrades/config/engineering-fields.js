@@ -1,10 +1,2 @@
-export const engineeringFields = [
-  'Software Engineering',
-  'Computer Engineering',
-  'Electrical Engineering',
-  'Mechanical Engineering',
-  'Civil & Building Engineering',
-  'Chemical Engineering',
-  'Aerospace Engineering',
-  'Industrial Engineering',
-];
+import { tracks } from './tracks.js';
+export const engineeringFields = tracks.map(track => track.name);
