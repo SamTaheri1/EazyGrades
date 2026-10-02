@@ -11,7 +11,7 @@ const plus=(courseId='mech-343',productId='core')=>({kind:'pdf',courseId,product
 const premium={kind:'premium',trackId:'software-engineering'};
 async function fixture(t,overrides={}){
  const dir=mkdtempSync(path.join(tmpdir(),'eazygrades-test-'));
- const courses=['comp-346','comp-352','mech-343','engr-213','engr-233','engr-371','elec-342'].map((id,i)=>({id,code:id.toUpperCase().replace('-',' '),title:'Test',category:i===2?'Mechanical Engineering':'Software Engineering',published:true,products:[{id:'core',title:'Core'},{id:'advanced',title:'Advanced'}]}));
+ const courses=['comp-346','comp-352','mech-343','engr-244','engr-361','indu-323','engr-213','engr-233','engr-371','elec-342'].map((id,i)=>({id,code:id.toUpperCase().replace('-',' '),title:'Test',category:i===2?'Mechanical Engineering':'Software Engineering',published:true,products:[{id:'core',title:'Core'},{id:'advanced',title:'Advanced'}]}));
  for(const c of courses){mkdirSync(path.join(dir,'private-pdfs',c.id),{recursive:true});for(const p of c.products)writeFileSync(path.join(dir,'private-pdfs',c.id,`${p.id}.pdf`),'%PDF-1.4\nTest bytes');}
  let time=Date.now(),seq=0;const state={sessions:new Map(),subs:new Map(),requests:[],keys:[],customers:0,mismatch:false,uncertain:false};const amounts={price_single:1999,price_premium:1599,price_plus:1299};
  const stripe={webhooks:signer.webhooks,customers:{create:async()=>({id:`cus_${++state.customers}`})},prices:{retrieve:async id=>({id,active:true,currency:'cad',unit_amount:state.mismatch?1:amounts[id],recurring:id==='price_premium'?{interval:'month',interval_count:1}:null})},subscriptions:{retrieve:async id=>state.subs.get(id),update:async(id,input)=>Object.assign(state.subs.get(id),input)},checkout:{sessions:{
@@ -94,11 +94,30 @@ test('registration accepts each of the seven specified engineering fields',async
  const f=await fixture(t);const {engineeringFields}=await import('../config/engineering-fields.js');assert.equal(engineeringFields.length,7);
  for(const [index,engineeringField] of engineeringFields.entries())assert.equal((await f.request('/api/auth/register',{body:{name:'Student Example',email:`student${index}@example.com`,password:'long-test-password',dateOfBirth:'2000-01-01',engineeringField,acceptTerms:true}})).status,201);
 });
-test('every Premium field includes the three common courses; shared courses require an explicit membership',async t=>{
+test('every Premium field excludes Engineering Core; shared program courses require an explicit membership',async t=>{
  const {tracks}=await import('../config/tracks.js');
  for(const track of tracks){const f=await fixture(t),{cookie}=await f.register();await f.subscribe(cookie,track.id);
-  for(const course of ['engr-213','engr-233','engr-371'])for(const product of ['core','advanced'])assert.equal((await f.access(cookie,course,product)).status,200,`${track.id}: ${course}`);
+  for(const course of ['engr-213','engr-233','engr-371'])for(const product of ['core','advanced'])assert.equal((await f.access(cookie,course,product)).status,403,`${track.id}: ${course}`);
   assert.equal((await f.access(cookie,'elec-342')).status,['computer-engineering','electrical-engineering'].includes(track.id)?200:403);
   assert.equal((await f.access(cookie,'comp-352')).status,track.id==='software-engineering'?200:403);
  }
+});
+
+test('Engineering Core requires a bundle purchase, rejects Plus, and survives Premium expiry',async t=>{
+ const f=await fixture(t),{cookie}=await f.register();
+ await f.subscribe(cookie);
+ assert.equal((await f.checkout(cookie,{kind:'premium',trackId:'engineering-core'})).status,400);
+ for(const course of ['engr-213','engr-233','engr-371']){
+  assert.equal((await f.checkout(cookie,plus(course))).status,403);
+  await f.purchase(cookie,pdf(course));
+  for(const product of ['core','advanced'])assert.equal((await f.access(cookie,course,product)).status,200);
+ }
+ f.advance(7200000);
+ for(const course of ['engr-213','engr-233','engr-371'])for(const product of ['core','advanced'])assert.equal((await f.access(cookie,course,product)).status,200);
+});
+test('Engineering Core bundles can be purchased without Premium',async t=>{
+ const f=await fixture(t),{cookie}=await f.register();
+ await f.purchase(cookie,pdf('engr-213'));
+ for(const product of ['core','advanced'])assert.equal((await f.access(cookie,'engr-213',product)).status,200);
+ assert.equal((await f.access(cookie,'engr-233')).status,403);
 });

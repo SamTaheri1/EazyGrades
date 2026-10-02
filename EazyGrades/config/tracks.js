@@ -1,4 +1,4 @@
-// Field memberships from the supplied eng_list.md and requested additions; common courses belong to every field.
+// Premium tracks contain program-specific courses only. Engineering Core is sold separately.
 export const commonCourseIds = ["engr-213","engr-233","engr-371"];
 export const tracks = [
   {
@@ -8,12 +8,9 @@ export const tracks = [
       "comp-232",
       "comp-352",
       "comp-346",
-      "engr-233",
       "elec-275",
       "soen-331",
-      "comp-249",
-      "engr-213",
-      "engr-371"
+      "comp-249"
     ]
   },
   {
@@ -24,10 +21,7 @@ export const tracks = [
       "coen-346",
       "elec-273",
       "elec-342",
-      "coen-311",
-      "engr-233",
-      "engr-213",
-      "engr-371"
+      "coen-311"
     ]
   },
   {
@@ -39,10 +33,7 @@ export const tracks = [
       "elec-331",
       "elec-311",
       "elec-251",
-      "coen-352",
-      "engr-213",
-      "engr-233",
-      "engr-371"
+      "coen-352"
     ]
   },
   {
@@ -54,10 +45,7 @@ export const tracks = [
       "mech-352",
       "mech-371",
       "mech-343",
-      "mech-351",
-      "engr-213",
-      "engr-233",
-      "engr-371"
+      "mech-351"
     ]
   },
   {
@@ -69,10 +57,7 @@ export const tracks = [
       "bcee-344",
       "bcee-345",
       "civi-381",
-      "bcee-432",
-      "engr-213",
-      "engr-233",
-      "engr-371"
+      "bcee-432"
     ]
   },
   {
@@ -84,10 +69,7 @@ export const tracks = [
       "mech-352",
       "mech-361",
       "aero-464",
-      "aero-455",
-      "engr-213",
-      "engr-233",
-      "engr-371"
+      "aero-455"
     ]
   },
   {
@@ -99,12 +81,13 @@ export const tracks = [
       "indu-311",
       "indu-371",
       "indu-372",
-      "indu-423",
-      "engr-213",
-      "engr-233",
-      "engr-371"
+      "indu-423"
     ]
   }
 ];
 export const tracksForCourse = course => tracks.filter(track => track.courseIds.includes(course.id)).map(track => track.id);
 export const courseInTrack = (course, trackId) => Boolean(trackId) && tracksForCourse(course).includes(trackId);
+
+export const isCommonCourse = course => commonCourseIds.includes(course.id);
+export const courseGroups = [{id:"engineering-core",name:"Engineering Core",courseIds:commonCourseIds},...tracks];
+export const courseInGroup = (course, groupId) => groupId === "engineering-core" ? isCommonCourse(course) : courseInTrack(course, groupId);

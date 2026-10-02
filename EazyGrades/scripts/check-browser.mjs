@@ -2,7 +2,7 @@ import {chromium} from 'playwright';
 import assert from 'node:assert/strict';
 import {mkdirSync} from 'node:fs';
 import courses from '../data/courses.js';
-import {tracks} from '../config/tracks.js';
+import {tracks,courseGroups} from '../config/tracks.js';
 mkdirSync('test-results',{recursive:true});
 const browser=await chromium.launch({channel:'msedge',headless:true});
 try{
@@ -26,16 +26,20 @@ try{
  await page.goto('http://127.0.0.1:3000/courses');await ready();
  for(const width of [1440,390]){
   await page.setViewportSize({width,height:900});
-  for(const track of tracks){
+  assert.equal(await page.locator('.filters button').first().innerText(),'All courses');
+  assert.equal(await page.locator('.filters button').nth(1).innerText(),'Engineering Core');
+  await page.getByRole('button',{name:'All courses',exact:true}).click();
+  assert.match(await page.locator('.catalog-toolbar').innerText(),/44 courses (?:across sections|in total) \(39 unique\)/);
+  for(const track of courseGroups){
    const button=page.getByRole('button',{name:track.name,exact:true});assert.equal(await button.isVisible(),true);await button.click();
    const codes=await page.locator('.catalog-card .course-code').allTextContents();
    assert.deepEqual(codes.map(c=>c.toLowerCase().replace(' ','-')).sort(),[...track.courseIds].sort());
-   for(const code of ['ENGR 213','ENGR 233','ENGR 371'])assert.ok(codes.includes(code));
+   for(const code of ['ENGR 213','ENGR 233','ENGR 371'])assert.equal(codes.includes(code),track.id==='engineering-core');
   }
   await noOverflow();await page.screenshot({path:`test-results/engineering-fields-${width}.png`,fullPage:true});
  }
  for(const course of courses){await page.getByRole('textbox',{name:'Search course code or name'}).fill(course.id.replace('-',''));assert.equal(await page.locator('.catalog-card').count(),1);assert.equal(await page.locator('.catalog-card .course-code').innerText(),course.code);}
- await page.getByRole('textbox',{name:'Search course code or name'}).fill('comp232');assert.equal(await page.locator('.catalog-card').count(),0);
+ await page.getByRole('textbox',{name:'Search course code or name'}).fill('comp232');assert.equal(await page.locator('.catalog-card').count(),1);
  await page.getByRole('textbox',{name:'Search course code or name'}).fill('COMP 352');assert.equal(await page.locator('.catalog-card').count(),1);
  await page.locator('.catalog-card').click();assert.equal(await page.locator('.product-row').count(),2);assert.equal(await page.getByRole('button',{name:'Buy both PDFs for $19.99',exact:true}).count(),1);await noOverflow();await page.keyboard.press('Escape');
  // Mock account/catalog state only in this isolated browser context; no real users or charges.
@@ -51,6 +55,7 @@ try{
  const openCourse=async(code)=>{await page.goto('http://127.0.0.1:3000/courses');await ready();await page.getByRole('textbox',{name:'Search course code or name'}).fill(code);await page.locator('.catalog-card').click();};
  user={...signedIn};await openCourse('COMP 352');await page.getByRole('button',{name:'Buy both PDFs for $19.99',exact:true}).first().click();await page.getByRole('alert').filter({hasText:'Test checkout captured.'}).waitFor();assert.deepEqual(submitted,{kind:'course',courseId:'comp-352'});
  user={...signedIn,premium:{trackId:'software-engineering',expiresAt:Date.now()+3600000,cancelAtPeriodEnd:false},plusPricing:{id:'plus',name:'Plus pricing',amount:1299,currency:'cad',checkoutEnabled:true},purchasedPdfIds:['mech-343:core']};
+ await openCourse('ENGR 213');assert.equal(await page.getByRole('button',{name:'Included with Premium',exact:true}).count(),0);assert.equal(await page.getByRole('button',{name:/Add with Plus/}).count(),0);await page.getByRole('button',{name:'Buy both PDFs for $19.99',exact:true}).click();await page.getByRole('alert').filter({hasText:'Test checkout captured.'}).waitFor();assert.deepEqual(submitted,{kind:'course',courseId:'engr-213'});
  await openCourse('COMP 352');assert.equal(await page.getByRole('button',{name:'Included with Premium',exact:true}).count(),2);
  await openCourse('MECH 343');assert.equal(await page.getByRole('button',{name:'Download PDF',exact:true}).count(),1);await page.getByRole('button',{name:'Add with Plus for $12.99',exact:true}).click();await page.getByRole('alert').filter({hasText:'Test checkout captured.'}).waitFor();assert.deepEqual(submitted,{kind:'pdf',courseId:'mech-343',productId:'advanced'});await noOverflow();await page.screenshot({path:'test-results/member-pdf-mobile.png'});
  await page.goto('http://127.0.0.1:3000/pricing');await ready();assert.equal(await page.locator('.plus-badge').count(),1);assert.equal(await page.locator('.plan-card').count(),2);assert.match(await page.locator('.plus-benefit').innerText(),/12\.99/);

@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import coursesDefault from '../data/courses.js';
-import { tracks, tracksForCourse, courseInTrack } from '../config/tracks.js';
+import { tracks, tracksForCourse, courseInTrack, isCommonCourse } from '../config/tracks.js';
 import { engineeringFields } from '../config/engineering-fields.js';
 import express from 'express';
 import Database from 'better-sqlite3';
@@ -246,6 +246,7 @@ export function createApp(options = {}) {
         const course=courses.find(c=>c.id===courseId);
         if(!course||!availableProduct(course,productId))throw fail(400,'This PDF is not available yet.');
         if(canAccess(req.user.id,course,productId))throw fail(409,'You already have access to this PDF. Download it from the course details.');
+        if(isCommonCourse(course))throw fail(403,'Engineering Core courses require a separate one-time course bundle purchase.');
         if(!premium||courseInTrack(course,premium.track_id))throw fail(403,'Individual Plus purchases require active Premium and a PDF outside your track. Choose the course bundle for both PDFs.');
         offer=pricing.plus;
       }
