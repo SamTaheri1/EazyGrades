@@ -2,6 +2,29 @@ const note = "Each PDF contains 8 multiple choice questions, 6 true or false que
 // Catalog restricted to the supplied engineering list. Memberships live in config/tracks.js.
 const courses = [
   {
+    "id": "comp-232",
+    "code": "COMP 232",
+    "title": "Mathematics for Computer Science",
+    "category": "Software Engineering",
+    "description": "Sets, logic, functions, relations, number theory, and proof techniques.",
+    "credits": 3,
+    "sourceUrl": "https://www.concordia.ca/academics/undergraduate/calendar/current/section-71-gina-cody-school-of-engineering-and-computer-science/section-71-70-department-of-computer-science-and-software-engineering/section-71-70-10-computer-science-and-software-engineering-courses.html#3529",
+    "metadataVerifiedAt": "2026-10-02",
+    "practiceKind": "mock",
+    coverageNote: note,
+    "published": false,
+    "products": [
+      {
+        "id": "core",
+        "title": "Core Exam Practice"
+      },
+      {
+        "id": "advanced",
+        "title": "Advanced Exam Practice"
+      }
+    ]
+  },
+  {
     "id": "comp-352",
     "code": "COMP 352",
     "title": "Data Structures and Algorithms",

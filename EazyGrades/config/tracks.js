@@ -1,10 +1,11 @@
-// Exact field memberships from the supplied eng_list.md; common courses belong to every field.
+// Field memberships from the supplied eng_list.md and requested additions; common courses belong to every field.
 export const commonCourseIds = ["engr-213","engr-233","engr-371"];
 export const tracks = [
   {
     "id": "software-engineering",
     "name": "Software Engineering",
     "courseIds": [
+      "comp-232",
       "comp-352",
       "comp-346",
       "engr-233",
