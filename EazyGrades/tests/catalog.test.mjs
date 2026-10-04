@@ -33,3 +33,9 @@ test('Engineering Core is a separate first group, never a Premium track',()=>{
  assert.ok(tracks.every(t=>!t.courseIds.some(id=>isCommonCourse({id}))));
  assert.equal(courseGroups.reduce((n,g)=>n+g.courseIds.length,0),44);
 });
+
+test('partial codes find every matching course, while invalid queries do not match everything',()=>{
+ assert.deepEqual(courses.filter(c=>matchesCourse(c,'311')).map(c=>c.code).sort(),['COEN 311','ELEC 311','INDU 311']);
+ for(const query of ['---','???','no such course'])assert.equal(courses.filter(c=>matchesCourse(c,query)).length,0);
+ for(const query of ['','   '])assert.equal(courses.filter(c=>matchesCourse(c,query)).length,39);
+});
