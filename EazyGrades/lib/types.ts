@@ -3,7 +3,7 @@ export type Offer = {id:string;name:string;amount:number;currency:string;checkou
 export type Pricing = {single:Offer;premium:Offer};
 export type Track = {id:string;name:string;available?:boolean};
 export type Checkout = {kind:'premium';trackId:string}|{kind:'course';courseId:string}|{kind:'pdf';courseId:string;productId:string};
-export type User = {name:string;email:string;hasBilling:boolean;accessBlocked:boolean;premium:{trackId:string;expiresAt:number;cancelAtPeriodEnd:boolean}|null;plusPricing:Offer|null;purchasedPdfIds:string[];accessiblePdfIds:string[];subscriptions:{id:string;planId:string;trackId:string|null;status:string;expiresAt:number;cancelAtPeriodEnd:number;blocked:number}[]};
+export type User = {name:string;email:string;engineeringField?:string|null;hasBilling:boolean;accessBlocked:boolean;premium:{trackId:string;expiresAt:number;cancelAtPeriodEnd:boolean}|null;plusPricing:Offer|null;purchasedPdfIds:string[];accessiblePdfIds:string[];subscriptions:{id:string;planId:string;trackId:string|null;status:string;expiresAt:number;cancelAtPeriodEnd:number;blocked:number}[]};
 export async function api<T>(path:string,body?:unknown):Promise<T> {
   const response=await fetch(`/api${path}`,{method:body===undefined?'GET':'POST',headers:body===undefined?{}:{'Content-Type':'application/json'},body:body===undefined?undefined:JSON.stringify(body),cache:'no-store'});
   let data;

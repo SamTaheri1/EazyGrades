@@ -9,13 +9,14 @@ const browser=await chromium.launch({channel:'msedge',headless:true});
 try{
  const page=await browser.newPage({viewport:{width:1440,height:1000}}),errors=[];
  page.on('pageerror',e=>errors.push(e.message));
- const ready=()=>page.waitForFunction(()=>!document.querySelector('.signin')?.hasAttribute('disabled')&&Number(getComputedStyle(document.body).opacity)===1);
+ const ready=()=>page.waitForFunction(()=>!document.querySelector('.signin')?.hasAttribute('disabled')&&Number(getComputedStyle(document.querySelector('main')).opacity)===1);
  const noOverflow=async()=>assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
  for(const width of [1440,390]){
   await page.setViewportSize({width,height:900});
   for(const route of ['/','/courses','/pricing','/faq','/privacy','/terms','/refund']){
    assert.equal((await page.goto('http://127.0.0.1:3000'+route)).status(),200);await ready();await noOverflow();assert.equal(await page.locator('h1').count(),1);
    assert.equal(await page.locator('main').evaluate(el=>getComputedStyle(el).animationName),'page-fade');
+   if(route==='/')await page.locator('.course-spotlight').screenshot({path:`${results}/spotlight-${width}.png`});
    if(route==='/pricing'){
     assert.equal(await page.locator('.plan-card').count(),2);assert.equal(await page.locator('.plus-badge').count(),0);
     assert.match(await page.locator('.price').first().innerText(),/19\.99/);assert.match(await page.locator('.price').last().innerText(),/15\.99/);
@@ -105,7 +106,7 @@ try{
  await page.route('**/api/catalog',r=>r.fulfill({json:catalog}));
  await page.route('**/api/me',r=>r.fulfill({json:{user}}));
  await page.route('**/api/billing/checkout',r=>{submitted=r.request().postDataJSON();return r.fulfill({status:409,json:{error:'Test checkout captured.'}});});
- const signedIn={name:'Student',email:'student@example.com',hasBilling:true,accessBlocked:false,premium:null,plusPricing:null,purchasedPdfIds:[],accessiblePdfIds:[],subscriptions:[]};
+ const signedIn={name:'Student',email:'student@example.com',engineeringField:'Software Engineering',hasBilling:true,accessBlocked:false,premium:null,plusPricing:null,purchasedPdfIds:[],accessiblePdfIds:[],subscriptions:[]};
  const openCourse=async(code)=>{await page.goto('http://127.0.0.1:3000/courses');await ready();await page.getByRole('textbox',{name:'Search course code or name'}).fill(code);await page.locator('.catalog-card').click();};
  user={...signedIn};await openCourse('COMP 352');await page.getByRole('button',{name:'Buy both PDFs for $19.99',exact:true}).first().click();await page.getByRole('alert').filter({hasText:'Test checkout captured.'}).waitFor();assert.deepEqual(submitted,{kind:'course',courseId:'comp-352'});
  user={...signedIn,premium:{trackId:'software-engineering',expiresAt:Date.now()+3600000,cancelAtPeriodEnd:false},plusPricing:{id:'plus',name:'Plus pricing',amount:1299,currency:'cad',checkoutEnabled:true},purchasedPdfIds:['mech-343:core']};
@@ -114,9 +115,25 @@ try{
  await openCourse('MECH 343');assert.equal(await page.getByRole('button',{name:'Download PDF',exact:true}).count(),1);await page.getByRole('button',{name:'Add with Plus for $12.99',exact:true}).click();await page.getByRole('alert').filter({hasText:'Test checkout captured.'}).waitFor();assert.deepEqual(submitted,{kind:'pdf',courseId:'mech-343',productId:'advanced'});await noOverflow();await page.screenshot({path:`${results}/member-pdf-mobile.png`});
  await page.goto('http://127.0.0.1:3000/pricing');await ready();assert.equal(await page.locator('.plus-badge').count(),1);assert.equal(await page.locator('.plan-card').count(),2);assert.match(await page.locator('.plus-benefit').innerText(),/12\.99/);
  user={...signedIn,purchasedPdfIds:['mech-343:core']};await openCourse('MECH 343');assert.equal(await page.getByRole('button',{name:'Download PDF',exact:true}).count(),1);assert.equal(await page.getByRole('button',{name:'Buy both PDFs for $19.99',exact:true}).count(),1);assert.equal(await page.getByRole('button',{name:/Add with Plus/}).count(),0);
- await page.goto('http://127.0.0.1:3000/pricing');await ready();await page.getByRole('combobox',{name:/Your track/}).selectOption('software-engineering');await page.getByRole('button',{name:'Choose Premium',exact:true}).click();await page.getByRole('alert').filter({hasText:'Test checkout captured.'}).waitFor();assert.deepEqual(submitted,{kind:'premium',trackId:'software-engineering'});
+ await page.goto('http://127.0.0.1:3000/pricing');await ready();assert.equal(await page.getByRole('combobox',{name:/Your track/}).count(),0);await page.getByRole('button',{name:'Choose Premium',exact:true}).click();await page.getByRole('alert').filter({hasText:'Test checkout captured.'}).waitFor();assert.deepEqual(submitted,{kind:'premium',trackId:'software-engineering'});
  assert.deepEqual(errors,[]);
  // Registration is completed before any create-account request is sent.
+ for(const track of tracks){
+  user={...signedIn,engineeringField:track.name};
+  await page.goto('http://127.0.0.1:3000/pricing');await ready();
+  assert.equal(await page.locator('.premium-track strong').innerText(),`Your track: ${track.name}`);
+  await page.getByRole('button',{name:'Choose Premium',exact:true}).click();
+  await page.getByRole('alert').filter({hasText:'Test checkout captured.'}).waitFor();
+  assert.deepEqual(submitted,{kind:'premium',trackId:track.id});
+ }
+ user={...signedIn,engineeringField:null};
+ await page.goto('http://127.0.0.1:3000/pricing');await ready();
+ assert.equal(await page.getByRole('button',{name:'Choose Premium',exact:true}).isDisabled(),true);
+ user=null;
+ await page.goto('http://127.0.0.1:3000/pricing');await ready();
+ await page.getByRole('button',{name:'Choose Premium',exact:true}).click();
+ assert.equal(await page.getByRole('dialog').isVisible(),true);
+ await page.keyboard.press('Escape');
  let registration=null;
  user=null;
  await page.route('**/api/auth/register',r=>{registration=r.request().postDataJSON();return r.fulfill({json:{user:{...signedIn,name:registration.name}}});});
