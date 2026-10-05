@@ -7,7 +7,7 @@ Production domain: https://vistagrades.com. Set `APP_URL=https://vistagrades.com
 ## Run locally
 
 - Node.js 24 and npm are required.
-- From the repository root, run `cd "Vista Grades"`.
+- From the repository root, run `cd "vista-grades"`.
 - `npm ci`
 - Copy `.env.example` to `.env` and configure the required values.
 - `npm run dev` starts the website on http://127.0.0.1:3000 and API on port 4100.
@@ -55,6 +55,6 @@ The catalog contains only the 38 unique courses in the supplied engineering list
 
 ## Deploying the name change
 
-Set the hosting project root to `Vista Grades` and reconnect the renamed GitHub repository if needed. Configure DNS and TLS for `vistagrades.com`, update Stripe webhook and customer portal URLs, and set the production `APP_URL` before deployment. Keep the existing support email until its replacement is verified.
+Set the hosting project root to `vista-grades` and reconnect the renamed GitHub repository if needed. Configure DNS and TLS for `vistagrades.com`, update Stripe webhook and customer portal URLs, and set the production `APP_URL` before deployment. Keep the existing support email until its replacement is verified.
 
 Stop the API before moving an existing database. Checkpoint its SQLite WAL, preserve all records, and set `DATABASE_PATH` to its new location. The default filename is `vistagrades.sqlite`. The renamed session cookie requires users to sign in again; accounts and purchases remain in the database. Keep private PDF storage outside the public website.
