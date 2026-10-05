@@ -1,0 +1,28 @@
+node_modules/
+.next/
+.env
+.env.*
+!.env.example
+data/*.sqlite*
+data/private-pdfs/
+test-results/
+*.tsbuildinfo
+*.log
+
+# Private exam PDFs and their rendered previews must never be committed.
+*.pdf
+data/practice-qa/
+output/pdf/*.png
+output/pdf/*.jpg
+output/pdf/*.jpeg
+output/pdf/*.webp
+tmp/pdfs/*.png
+tmp/pdfs/*.jpg
+tmp/pdfs/*.jpeg
+tmp/pdfs/*.webp
+
+# Generated caches and private document work files.
+tmp/node-compile-cache/
+tmp/rebrand-*
+output/pdf/*.tex
+tmp/pdfs/*.py
