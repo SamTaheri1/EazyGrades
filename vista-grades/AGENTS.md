@@ -185,11 +185,13 @@ Apply these rules whenever creating or editing an exam-practice PDF. They do not
 - Website-only changes do not require a PDF log entry.
 
 ### Course Resources
-- You have access to all engineering course titles as well as their course outlines (PDF names as the course title) inside the folder "courses", for each individual engineering program in its own folder.
-- Common course outlines are in the Engineering Core folder
+- You have access to the “Courses” folder, given access seperately from the github repo folder, which contains the course titles and course outlines for each engineering program. Each program has its own folder, and the PDF files inside each folder are named according to their corresponding course titles.
+- Follow the course outlines courses content to create mock exam PDFs for each course, nothing more nothing less than what taught, ignore other irrelevant information about the course details in the outline. Only stick to course contents (or titled as schedule in the outline PDFs). If any course content is too broad or generic, more info will be provided as a prompt.
+- Every generated PDF must be consistent with design and content.
+- Common course outlines are in the Engineering Core folder, for classes that are in the "Engineering Core" section of the website.
 - The generated PDFs must cover the course outlines for the requested courses and must follow prior given instructions related to syntax, design, format, solvability, etc. of the problems in each PDF.
 
-### Course Resources
+### Code Approval
 - Do not commit to GitHub unless prompted.
 
 
