@@ -120,3 +120,33 @@ Changes:
 - Included AVL and BST insertion/deletion practice, heap drawings, one simple written-pseudocode task, and Dijkstra interpretation.
 - Updated and checked the answer key; recompiled and inspected all 20 pages.
 - Verified automatic signup-email stamping beside the copyright on every download page, including long-email wrapping. Masters remain private and unchanged by personalization.
+
+## COMP 352: Core Exam Practice - revision 2.2
+
+Version: 2.2\
+Last updated: 2026-10-07\
+Verified pages: 12\
+Questions: 24 (8 multiple-choice, 6 true-or-false, 10 long-answer)\
+Total points: 120\
+Answer key: Included\
+Status: Private paid PDF; signup email added on authorized download
+
+- Added the requested first-page course overview, question-type counts, points, instructions, and terms.
+- Retained the latest questions and solutions unchanged during the final formatting pass, including the Dijkstra and traversal diagrams and simple array task.
+- Grouped long-answer questions and tightened answer-key pagination while preserving working space. Every page after the first begins with a question or answer-key question.
+- Compiled successfully, inspected all pages, checked counts and marks, independently verified computational answers, and confirmed the email footer on personalized copies.
+
+## COMP 352: Advanced Exam Practice - revision 2.2
+
+Version: 2.2\
+Last updated: 2026-10-07\
+Verified pages: 12\
+Questions: 24 (8 multiple-choice, 6 true-or-false, 10 long-answer)\
+Total points: 120\
+Answer key: Included\
+Status: Private paid PDF; signup email added on authorized download
+
+- Matched the Core edition's concise first-page overview and consistent spacing.
+- Preserved all latest questions, marks, diagrams, and solutions during the final formatting pass.
+- Kept the graphical Dijkstra and traversal questions with small follow-up changes, and the simpler array question replacing linked lists.
+- Compiled successfully and inspected all pages. Verified computational answers, including tied shortest paths, and checked all personalized footer pages.

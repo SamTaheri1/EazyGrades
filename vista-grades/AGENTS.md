@@ -16,21 +16,20 @@ The website must stay simple, serious, professional, and easy to use.
 
 ## Pricing and Access Rules
 
-- Users can buy individual PDFs as one-time purchases.
-- Users may also subscribe for access to one selected engineering track.
-- A subscription must not unlock every course unless explicitly coded as a full-access plan.
-- A user can access a PDF only if they purchased it directly or their active subscription includes it.
+- VistaGrades uses one-time payments only.
+- A Single Course purchase costs $19.99 and gives access to one course.
+- A Program Pack costs $24.99 and gives access to the program-specific courses shown for that program.
+- There is no monthly subscription unless the user explicitly adds one later.
+- A user can access a paid PDF only after buying the related Single Course or Program Pack.
 - Paid access must be checked server-side before downloads are allowed.
 
-## Common Core Courses
+## Engineering Core Courses
 
-ENGR 213, ENGR 233, and ENGR 371 are common engineering core courses, under the title "Engineering Core" in the Courses section of the website.
-
-They must be sold as separate one-time course bundles and must not be included automatically in any Premium program track.
-
-Premium tracks should include only program-specific courses.
-
-Common core courses may appear as recommended add-ons, but access requires a separate purchase.
+- ENGR 213, ENGR 233, and ENGR 371 are Engineering Core courses.
+- Engineering Core is not an engineering program.
+- Engineering Core courses are not included in any Program Pack.
+- Engineering Core courses must be bought separately as Single Course purchases.
+- They may appear as recommended add-ons for programs, but access still requires a separate purchase.
 
 ## Stripe Rules
 
@@ -40,7 +39,7 @@ Common core courses may appear as recommended add-ons, but access requires a sep
 - Store Stripe secrets and price IDs in environment variables.
 - Never collect or store full card details.
 - Do not trust frontend prices.
-- Verify payment or subscription status server-side before unlocking access.
+- Verify payment status server-side before unlocking access.
 
 ## PDF Security Rules
 
@@ -63,8 +62,8 @@ Common core courses may appear as recommended add-ons, but access requires a sep
 Use clear, direct student-focused language.
 
 Good style:
-- Need one PDF? Buy it once.
-- Studying a full track? Choose a subscription.
+- Need one course? Buy it once.
+- Need several program courses? Choose a Program Pack.
 - AI-generated exam-style practice for focused revision.
 
 Avoid:
@@ -88,7 +87,7 @@ These pages must explain:
 - VistaGrades does not guarantee academic results.
 - VistaGrades is not affiliated with or endorsed by any university.
 - Refunds are limited once access or download is provided.
-- Canceling a subscription stops future renewals but does not automatically refund completed charges.
+- Single Course purchases and Program Packs are one-time payments.
 
 ## AI Content Disclaimer
 
@@ -149,15 +148,17 @@ Apply these rules whenever creating or editing an exam-practice PDF. They do not
 ### Format and typography
 - Write every PDF in LaTeX.
 - Match the latest user-approved PDF’s layout, typography, spacing, colours, headers, footers, and answer-space style.
-- Refer to any similar documents in the folders for reference in style, if necessary.
+- Refer to any similar documents in the folders for reference in style and formatting the each document appropriately, if necessary.
 - Typeset every mathematical expression, variable, fraction, exponent, bound, interval, and recurrence in LaTeX math mode.
 - Use actual superscripts and properly formatted fractions, Greek letters, logarithms, and floor/ceiling notation.
 - Never display raw notation such as `n^2`, `Theta(n)`, or `floor((lo+hi)/2)` in ordinary prose.
 - Make multiple-choice labels **A**, **B**, **C**, and **D** bold, with generous separation between choices.
 - Provide clearly indented pseudocode when a question asks students to analyse a loop or algorithm.
 - Leave sufficient working space, especially for drawing trees, diagrams, and multi-step solutions.
+- For long-answer questions, do not write the words “Working Space”; leave the space blank.
 - Keep headings with their content and prevent awkward wrapping, clipping, and overlapping text.
-- Always start every page with a question and leave no page mostly blank only because of a couple of lines, stay efficient.
+- Always start every page with a question (except for the first page which must introduce the course name and question types and numbers and points, as well as its terms and conditions briefly) and leave no page mostly blank only because of a couple of lines, stay efficient.
+- There must be a reasonable and consistent line spacing throught each generated PDF (between titles and text, etc.). The header must appear on the first page of every PDF. It should be clean, professional, and consistent across all generated PDFs. Use the correct course code, course title, and practice type for each PDF.
 
 ### Wording
 - Use “long-answer questions,” not “structured questions.”
