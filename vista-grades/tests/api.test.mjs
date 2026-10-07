@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {mkdtempSync,mkdirSync,writeFileSync,rmSync} from 'node:fs';
+import {mkdtempSync,mkdirSync,writeFileSync,readFileSync,rmSync} from 'node:fs';
+import {PDFDocument,StandardFonts,decodePDFRawStream} from 'pdf-lib';
 import {tmpdir} from 'node:os';
 import path from 'node:path';
 import Stripe from 'stripe';
@@ -12,13 +13,14 @@ const premium={kind:'premium',trackId:'software-engineering'};
 async function fixture(t,overrides={}){
  const dir=mkdtempSync(path.join(tmpdir(),'vistagrades-test-'));
  const courses=['comp-346','comp-352','mech-343','engr-244','engr-361','indu-323','engr-213','engr-233','engr-371','elec-342'].map((id,i)=>({id,code:id.toUpperCase().replace('-',' '),title:'Test',category:i===2?'Mechanical Engineering':'Software Engineering',published:true,products:[{id:'core',title:'Core'},{id:'advanced',title:'Advanced'}]}));
- for(const c of courses){mkdirSync(path.join(dir,'private-pdfs',c.id),{recursive:true});for(const p of c.products)writeFileSync(path.join(dir,'private-pdfs',c.id,`${p.id}.pdf`),'%PDF-1.4\nTest bytes');}
+ const master=await PDFDocument.create();master.addPage([612,792]).drawText('Private practice fixture',{x:56,y:650});master.addPage([612,792]);const masterBytes=await master.save();
+ for(const c of courses){mkdirSync(path.join(dir,'private-pdfs',c.id),{recursive:true});for(const p of c.products)writeFileSync(path.join(dir,'private-pdfs',c.id,`${p.id}.pdf`),masterBytes);}
  let time=Date.now(),seq=0;const state={sessions:new Map(),subs:new Map(),requests:[],keys:[],customers:0,mismatch:false,uncertain:false};const amounts={price_single:1999,price_premium:1599,price_plus:1299};
  const stripe={webhooks:signer.webhooks,customers:{create:async()=>({id:`cus_${++state.customers}`})},prices:{retrieve:async id=>({id,active:true,currency:'cad',unit_amount:state.mismatch?1:amounts[id],recurring:id==='price_premium'?{interval:'month',interval_count:1}:null})},subscriptions:{retrieve:async id=>state.subs.get(id),update:async(id,input)=>Object.assign(state.subs.get(id),input)},checkout:{sessions:{
  create:async(input,opt)=>{state.requests.push(input);state.keys.push(opt.idempotencyKey);let s=[...state.sessions.values()].find(s=>s.client_reference_id===input.client_reference_id);if(!s){s={...input,id:`cs_test_${++seq}`,url:'https://checkout.stripe.com/test',status:'open',payment_status:'unpaid',currency:'cad',amount_total:amounts[input.line_items[0].price],payment_intent:`pi_${seq}`,line_items:{data:input.line_items.map(i=>({...i,price:{id:i.price}})),has_more:false}};state.sessions.set(s.id,s);}if(state.uncertain){state.uncertain=false;throw Error('timeout');}return s;},retrieve:async id=>state.sessions.get(id),expire:async id=>{state.sessions.get(id).status='expired';}}},billingPortal:{sessions:{create:async()=>({url:'https://billing.stripe.com/test'})}},charges:{retrieve:async()=>({customer:'cus_1'})}};
  const app=createApp({courses,dataDir:dir,dbPath:':memory:',appUrl:origin,stripe,webhookSecret:secret,priceIds:{single:'price_single',premium:'price_premium',plus:'price_plus'},checkoutEnabled:true,supportEmail:'support@example.com',rateLimits:false,now:()=>time,...overrides});
  const server=app.listen(0,'127.0.0.1');await new Promise(r=>server.once('listening',r));t.after(async()=>{await new Promise(r=>server.close(r));app.locals.db.close();rmSync(dir,{recursive:true,force:true});});const base=`http://127.0.0.1:${server.address().port}`;
- async function request(url,{body,cookie,headers={}}={}){const r=await fetch(base+url,{method:body===undefined?'GET':'POST',headers:{Origin:origin,...(cookie?{Cookie:cookie}:{}),...(body!==undefined?{'Content-Type':'application/json'}:{}),...headers},body:body===undefined?undefined:JSON.stringify(body)});return{status:r.status,body:r.headers.get('content-type')?.includes('application/json')?await r.json():await r.text(),headers:r.headers,cookie:r.headers.get('set-cookie')?.split(';')[0]};}
+ async function request(url,{body,cookie,headers={}}={}){const r=await fetch(base+url,{method:body===undefined?'GET':'POST',headers:{Origin:origin,...(cookie?{Cookie:cookie}:{}),...(body!==undefined?{'Content-Type':'application/json'}:{}),...headers},body:body===undefined?undefined:JSON.stringify(body)});const type=r.headers.get('content-type')||'';return{status:r.status,body:type.includes('application/json')?await r.json():type.includes('application/pdf')?Buffer.from(await r.arrayBuffer()):await r.text(),headers:r.headers,cookie:r.headers.get('set-cookie')?.split(';')[0]};}
  const register=(email='student@example.com')=>request('/api/auth/register',{body:{email,password:'long-test-password',name:'Student Example',dateOfBirth:'2000-02-29',engineeringField:'Software Engineering',acceptTerms:true}});
  const checkout=(cookie,body)=>request('/api/billing/checkout',{cookie,body});
  async function webhook(type,object,id=`evt_${++seq}`,valid=true){const payload=JSON.stringify({id,type,data:{object}});return fetch(base+'/api/billing/webhook',{method:'POST',headers:{'Content-Type':'application/json','stripe-signature':valid?signer.webhooks.generateTestHeaderString({payload,secret}):'bad'},body:payload});}
@@ -32,6 +34,28 @@ test('accounts retain hashed credentials, secure cookies and origin validation',
  const f=await fixture(t);assert.equal(await f.me(),null);assert.equal((await f.request('/api/auth/register',{body:{},headers:{Origin:'https://other.example'}})).status,403);
  const a=await f.register();assert.equal(a.status,201);assert.match(a.headers.get('set-cookie'),/HttpOnly/);assert.match(a.headers.get('set-cookie'),/SameSite=Lax/);assert.notEqual(f.app.locals.db.prepare('SELECT password FROM users').get().password,'long-test-password');assert.notEqual(f.app.locals.db.prepare('SELECT token_hash FROM sessions').get().token_hash,a.cookie.split('=')[1]);assert.equal((await f.register()).status,409);
  assert.equal((await f.request('/api/auth/login',{body:{email:'student@example.com',password:'wrong-password'}})).status,401);await f.request('/api/auth/logout',{body:{},cookie:a.cookie});assert.equal(await f.me(a.cookie),null);
+});
+
+test('downloads stamp the authenticated signup email on every page without altering the master',async t=>{
+ const f=await fixture(t),a=await f.register('first@example.com'),b=await f.register('second@example.com');
+ await f.purchase(a.cookie);await f.purchase(b.cookie);
+ const file=path.join(f.dir,'private-pdfs/comp-346/core.pdf'),before=readFileSync(file);
+ for(const [account,email,other] of [[a,'first@example.com','second@example.com'],[b,'second@example.com','first@example.com']]){
+  const r=await f.request('/api/download/comp-346/core?email=spoof@example.com',{cookie:account.cookie});
+  assert.equal(r.status,200);assert.equal(r.headers.get('cache-control'),'private, no-store');
+  const doc=await PDFDocument.load(r.body);const font=await doc.embedFont(StandardFonts.Helvetica);
+  assert.equal(doc.getPageCount(),2);
+  for(const page of doc.getPages()){
+   const streams=page.node.Contents().asArray().map(ref=>Buffer.from(decodePDFRawStream(doc.context.lookup(ref)).decode()).toString('latin1')).join('\n');
+   assert.ok(streams.includes(font.encodeText(email).toString().slice(1,-1)));
+   assert.ok(!streams.includes(font.encodeText(other).toString().slice(1,-1)));
+   assert.ok(!streams.includes(font.encodeText('spoof@example.com').toString().slice(1,-1)));
+   assert.ok(streams.includes(font.encodeText('© 2026 VistaGrades.').toString().slice(1,-1)));
+  }
+ }
+ assert.deepEqual(readFileSync(file),before);
+ // A broken master must fail closed, never return an unstamped original.
+ writeFileSync(file,'%PDF-invalid');assert.equal((await f.access(a.cookie)).status,500);
 });
 test('catalog exposes two offers and per-PDF availability; files stay private',async t=>{
  const f=await fixture(t);rmSync(path.join(f.dir,'private-pdfs/comp-346/advanced.pdf'));const c=(await f.request('/api/catalog')).body;

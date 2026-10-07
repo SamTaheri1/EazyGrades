@@ -149,7 +149,7 @@ Apply these rules whenever creating or editing an exam-practice PDF. They do not
 ### Format and typography
 - Write every PDF in LaTeX.
 - Match the latest user-approved PDF’s layout, typography, spacing, colours, headers, footers, and answer-space style.
-- Inspect that approved reference before generating a new document. If unavailable, ask for it rather than inventing a replacement format.
+- Refer to any similar documents in the folders for reference in style, if necessary.
 - Typeset every mathematical expression, variable, fraction, exponent, bound, interval, and recurrence in LaTeX math mode.
 - Use actual superscripts and properly formatted fractions, Greek letters, logarithms, and floor/ceiling notation.
 - Never display raw notation such as `n^2`, `Theta(n)`, or `floor((lo+hi)/2)` in ordinary prose.
@@ -157,6 +157,7 @@ Apply these rules whenever creating or editing an exam-practice PDF. They do not
 - Provide clearly indented pseudocode when a question asks students to analyse a loop or algorithm.
 - Leave sufficient working space, especially for drawing trees, diagrams, and multi-step solutions.
 - Keep headings with their content and prevent awkward wrapping, clipping, and overlapping text.
+- Always start every page with a question and leave no page mostly blank only because of a couple of lines, stay efficient.
 
 ### Wording
 - Use “long-answer questions,” not “structured questions.”
@@ -164,6 +165,7 @@ Apply these rules whenever creating or editing an exam-practice PDF. They do not
 - Keep the cover and instructions concise.
 - Avoid unnecessary page-by-page directions, detailed outline-location references, and repetitive explanations.
 - Retain the approved educational disclaimer and copyright footer.
+- Student email used for sign up on website must be included next to copyright.
 - Do not claim that these are official exams or professor-provided questions.
 
 ### Verification
@@ -172,7 +174,6 @@ Apply these rules whenever creating or editing an exam-practice PDF. They do not
 - Do not claim successful compilation or visual verification unless actually completed.
 
 ### Private delivery
-- Deliver exam PDFs in the conversation.
 - Never commit or push exam PDFs, rendered page images, private exam LaTeX sources, or scripts containing exam content to GitHub.
 - Keep temporary generation files outside the repository and remove task-created temporary files after delivery is confirmed.
 - Do not delete unrelated files or the only usable copy before confirming delivery.
@@ -183,13 +184,16 @@ Apply these rules whenever creating or editing an exam-practice PDF. They do not
 - Summarize changes in short, natural bullet points.
 - Do not include exam questions, answers, private download paths, or invented public-sample links in the log.
 - Website-only changes do not require a PDF log entry.
+- All generated PDFs must be saved in the pdf folder in Courses folder, given seperate access to (not in repo).
 
 ### Course Resources
-- You have access to the “Courses” folder, given access seperately from the github repo folder, which contains the course titles and course outlines for each engineering program. Each program has its own folder, and the PDF files inside each folder are named according to their corresponding course titles.
-- Follow the course outlines courses content to create mock exam PDFs for each course, nothing more nothing less than what taught, ignore other irrelevant information about the course details in the outline. Only stick to course contents (or titled as schedule in the outline PDFs). If any course content is too broad or generic, more info will be provided as a prompt.
-- Every generated PDF must be consistent with design and content.
-- Common course outlines are in the Engineering Core folder, for classes that are in the "Engineering Core" section of the website.
-- The generated PDFs must cover the course outlines for the requested courses and must follow prior given instructions related to syntax, design, format, solvability, etc. of the problems in each PDF.
+- You have access to the “Courses” folder, provided separately from the GitHub repo. It contains course titles and course outline images for each engineering program. Each program has its own folder, and the image files inside each folder are named according to their corresponding course titles.
+- You also have access to `eng_list.md`, which has info on courses offered for each program. In that file, the common courses shared between engineering programs are written in **bold**.
+- Use only the course content sections from the outline images to create mock exam PDFs, by extracting all the text to read contents. These sections may be titled “Course Content,” “Schedule,” or something similar.
+- Do not use irrelevant outline information such as grading breakdowns, dates, policies, instructor details, office hours, or administrative notes.
+- The generated mock exam PDFs must follow exactly what is taught in the course content. Do not add topics that are not listed. If a course content section is too broad or unclear, more details will be provided in the prompt.
+- Common course outlines are located in the “Engineering Core” folder for courses listed in the “Engineering Core” section of the website.
+- Every generated PDF must stay consistent in design, structure, formatting, problem style, syntax, and solvability.
 
 ### Code Approval
 - Do not commit to GitHub unless prompted.

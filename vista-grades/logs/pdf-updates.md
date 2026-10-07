@@ -47,3 +47,76 @@ Version: branding revision 1
 - Compared extracted text from every old and new PDF; only the company name changed. Layout overflow checks passed for every file.
 - Updated the private file checksums and byte counts in the practice manifest. PDFs remain private and excluded from GitHub.
 - Updated the separate COMP 352 Core LaTeX source and compiled it with the existing project compiler after the built-in compiler failed. Verified 14 pages, VistaGrades headers on every page, and the rendered first page. Its 24 questions and 120-point structure are unchanged; this branding pass does not re-review the answer key. The source and PDF remain private.
+
+## COMP 352: Core Exam Practice - 2026-10-06
+
+Version: 2.0\
+Last updated: 2026-10-06\
+Verified pages: 20\
+Questions: 24 (8 multiple-choice, 6 true-or-false, 10 long-answer)\
+Total points: 120\
+Answer key: Included\
+Status: Private paid PDF
+
+Changes:
+
+- Created a new full-length LaTeX edition from the supplied course-content outline.
+- Covered analysis, recursion, arrays, stacks, queues, lists, trees, heaps, hashing, search trees, sorting, and graph traversal.
+- Added a full working page for each long-answer question and an answer key with marking guidance.
+- Verified question counts, section marks, answer consistency, and all 20 rendered pages.
+- Kept the PDF, editable source, and review artifacts outside the repository.
+
+## COMP 352: Advanced Exam Practice - 2026-10-06
+
+Version: 2.0\
+Last updated: 2026-10-06\
+Verified pages: 20\
+Questions: 24 (8 multiple-choice, 6 true-or-false, 10 long-answer)\
+Total points: 120\
+Answer key: Included\
+Status: Private paid PDF
+
+Changes:
+
+- Created a new full-length LaTeX edition with deeper reasoning and applications within the supplied course-content outline.
+- Included invariants, amortized costs, balanced search trees, heap construction, collision handling, sorting analysis, and graph algorithms.
+- Matched the Core edition's typography, choice spacing, working space, disclaimers, and copyright footer.
+- Verified counts, marks, answer consistency, and all 20 rendered pages; independently computed selected algorithm traces and formulas.
+- Compiled both editions with the existing project compiler after the built-in compiler reported a Windows configuration error.
+- Kept the PDF, editable source, and review artifacts outside the repository.
+
+## COMP 352: Core Exam Practice - revision 2.1
+
+Version: 2.1\
+Last updated: 2026-10-06\
+Verified pages: 20\
+Questions: 24 (8 multiple-choice, 6 true-or-false, 10 long-answer)\
+Total points: 120\
+Answer key: Included\
+Status: Private paid PDF; reusable master personalized on authorized download
+
+Changes:
+
+- Added four explicit calculation or tracing MCQs covering function cost, stacks, queues, and hashing.
+- Replaced abstract true-or-false statements with short, concrete examples.
+- Simplified long-answer wording, retained one simple written-pseudocode task, and emphasized tree drawings and insertion/deletion operations.
+- Added interpretation of a Dijkstra result table and updated the answer key.
+- Recompiled and inspected all pages; verified question counts, marks, answers, and the personalized footer preview.
+
+## COMP 352: Advanced Exam Practice - revision 2.1
+
+Version: 2.1\
+Last updated: 2026-10-06\
+Verified pages: 20\
+Questions: 24 (8 multiple-choice, 6 true-or-false, 10 long-answer)\
+Total points: 120\
+Answer key: Included\
+Status: Private paid PDF; reusable master personalized on authorized download
+
+Changes:
+
+- Added four explicit calculation or tracing MCQs and kept queue operations concise.
+- Made short responses concrete and replaced lengthy pseudocode analysis with array operations, recursion trees, and sorting traces.
+- Included AVL and BST insertion/deletion practice, heap drawings, one simple written-pseudocode task, and Dijkstra interpretation.
+- Updated and checked the answer key; recompiled and inspected all 20 pages.
+- Verified automatic signup-email stamping beside the copyright on every download page, including long-email wrapping. Masters remain private and unchanged by personalization.

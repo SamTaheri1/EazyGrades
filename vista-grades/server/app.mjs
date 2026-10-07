@@ -13,6 +13,8 @@ import { randomBytes, randomUUID, scrypt as scryptCallback, createHash, timingSa
 import { promisify } from 'node:util';
 import { mkdirSync, readFileSync, existsSync, realpathSync } from 'node:fs';
 import path from 'node:path';
+import { readFile } from 'node:fs/promises';
+import { personalizePdf } from './personalize-pdf.mjs';
 
 const scrypt = promisify(scryptCallback);
 const DAY = 86400000;
@@ -309,8 +311,11 @@ export function createApp(options = {}) {
     if(!course||!availableProduct(course,product))throw fail(404,'This PDF is not available yet.');
     if(!canAccess(req.user.id,course,product))throw fail(403,'Purchase this PDF or choose Premium for its track.');
     const file=fileFor(course,product);
+    const personalized=await personalizePdf(await readFile(file),req.user.email);
     res.set('X-Robots-Tag','noindex, nofollow');
-    res.download(file,`VistaGrades-${course.code.replace(' ','-')}-${product}.pdf`);
+    res.set('Cache-Control','private, no-store');
+    res.attachment(`VistaGrades-${course.code.replace(' ','-')}-${product}.pdf`);
+    res.type('application/pdf').send(personalized);
   }));
   app.use((req,res)=>res.status(404).json({error:'Not found.'}));
   app.use((error,req,res,next)=>{
