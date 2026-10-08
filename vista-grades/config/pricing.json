@@ -1,5 +1,19 @@
 {
-  "single": { "id": "single", "name": "Course Bundle", "amount": 1999, "currency": "cad", "mode": "payment", "priceEnv": "STRIPE_PRICE_SINGLE" },
-  "premium": { "id": "premium", "name": "Premium", "amount": 1599, "currency": "cad", "mode": "subscription", "interval": "month", "intervalCount": 1, "priceEnv": "STRIPE_PRICE_PREMIUM" },
-  "plus": { "id": "plus", "name": "Plus pricing", "amount": 1299, "currency": "cad", "mode": "payment", "priceEnv": "STRIPE_PRICE_PLUS" }
+  "single": {
+    "id": "single",
+    "name": "Single Course",
+    "amount": 1299,
+    "currency": "cad",
+    "mode": "payment",
+    "priceEnv": "STRIPE_PRICE_SINGLE"
+  },
+  "program": {
+    "id": "program",
+    "name": "Program Pack",
+    "amount": 4999,
+    "compareAtAmount": 6499,
+    "currency": "cad",
+    "mode": "payment",
+    "priceEnv": "STRIPE_PRICE_PROGRAM"
+  }
 }

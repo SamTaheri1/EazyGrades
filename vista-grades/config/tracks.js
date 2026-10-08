@@ -1,4 +1,4 @@
-// Premium tracks contain program-specific courses only. Engineering Core is sold separately.
+// Program Packs contain program-specific courses only. Engineering Core is sold separately.
 export const commonCourseIds = ["engr-213","engr-233","engr-371"];
 export const tracks = [
   {

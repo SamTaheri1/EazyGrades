@@ -32,9 +32,9 @@ export async function personalizePdf(bytes, email) {
     } while (size >= 6);
     if (lines.length > 3) throw new Error('The signup email does not fit the PDF footer.');
     page.drawRectangle({ x, y, width, height: 52, color: rgb(1, 1, 1) });
-    lines.forEach((line, row) => page.drawText(line, { x: x + margin, y: y + 42 - row * 9, size, font, color }));
+    lines.forEach((line, row) => page.drawText(line, { x: x + (width - font.widthOfTextAtSize(line, size)) / 2, y: y + 24 + (lines.length - 1 - row) * 9, size, font, color }));
     const notice = 'For personal study use only. Redistribution, resale, or sharing is not permitted.';
-    page.drawText(notice, { x: x + margin, y: y + 12, size: 7, font, color });
+    page.drawText(notice, { x: x + (width - font.widthOfTextAtSize(notice, 7)) / 2, y: y + 12, size: 7, font, color });
     const number = String(index + 1);
     page.drawText(number, { x: x + width - margin - font.widthOfTextAtSize(number, 7), y: y + 12, size: 7, font, color });
   }

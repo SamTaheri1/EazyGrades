@@ -150,3 +150,31 @@ Status: Private paid PDF; signup email added on authorized download
 - Preserved all latest questions, marks, diagrams, and solutions during the final formatting pass.
 - Kept the graphical Dijkstra and traversal questions with small follow-up changes, and the simpler array question replacing linked lists.
 - Compiled successfully and inspected all pages. Verified computational answers, including tied shortest paths, and checked all personalized footer pages.
+## COMP 352: Core and Advanced Exam Practice - revision 2.3
+
+Version: 2.3\
+Last updated: 2026-10-07\
+Verified pages: 12 per PDF\
+Questions: 24 per PDF (8 multiple-choice, 6 true-or-false, 10 long-answer)\
+Total points: 120 per PDF\
+Answer key: Included in both\
+Status: Private paid PDFs; signup email added on authorized download
+
+- Removed all “Working Space” labels and their rules, leaving blank long-answer areas.
+- Used consistent heading, body, and solution paragraph spacing in both editions.
+- Included the course code, full course title, and correct practice type in the header on every page, including the first.
+- Preserved all questions and solutions unchanged. Recompiled both PDFs, checked question counts and computational answers, and visually reviewed all 24 pages.
+## COMP 352: Core and Advanced Exam Practice - revision 2.4
+
+Version: 2.4\
+Last updated: 2026-10-08\
+Verified pages: 12 per PDF\
+Questions: 24 per PDF (8 multiple-choice, 6 true-or-false, 10 long-answer)\
+Total points: 120 per PDF\
+Answer key: Included in both\
+Status: Private paid PDFs; signup email added on authorized download
+
+- Centered copyright and personal-use notices while keeping page numbers right-aligned.
+- Centered the buyer email beside copyright in personalized downloads, including wrapped long addresses.
+- Added an answer-key indication to every answer-key page header; used black solution text and question-number-only headings.
+- Preserved questions and solution content. Compiled both PDFs, verified counts and answers, and visually reviewed every page and personalized footer previews.

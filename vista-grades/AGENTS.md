@@ -9,16 +9,17 @@ The website must stay simple, serious, professional, and easy to use.
 ## Product Rules
 
 - VistaGrades sells digital PDF practice materials.
-- Content is AI-generated and made for study support only.
-- Do not claim the PDFs are official exams, past exams, or university-approved material.
+- Content is AI-generated and selected for better exam performance and made for study support only.
+- VistaGrades does not claim the PDFs are official exams, past exams, or university-approved material.
 - Do not guarantee grades, passing, academic results, or exam outcomes.
 - Always make it clear that VistaGrades is not affiliated with or endorsed by any university.
 
 ## Pricing and Access Rules
 
 - VistaGrades uses one-time payments only.
-- A Single Course purchase costs $19.99 and gives access to one course.
-- A Program Pack costs $24.99 and gives access to the program-specific courses shown for that program.
+- A Single Course purchase costs $12.99 and gives access to one course.
+- A Program Pack costs $49.99 and gives access to the program-specific courses shown for that program.
+- Have a sign next to the Program Pack option that says it used to cost 64.99$ with a strikethrough.
 - There is no monthly subscription unless the user explicitly adds one later.
 - A user can access a paid PDF only after buying the related Single Course or Program Pack.
 - Paid access must be checked server-side before downloads are allowed.
@@ -61,6 +62,10 @@ The website must stay simple, serious, professional, and easy to use.
 
 Use clear, direct student-focused language.
 
+- Never add an "Included courses" list, per-course "in preparation" descriptions, or a publication/exclusion paragraph in pricing cards. Keep course-by-course details and availability on the Courses page.
+- Do not add a "Choose your program" dropdown to pricing cards. Program Pack checkout uses the engineering field saved on the signed-in account; never silently default to another program.
+- Keep Program Pack cards concise: price, short benefits, and purchase action. Do not reintroduce the removed descriptive block unless the user explicitly requests it.
+
 Good style:
 - Need one course? Buy it once.
 - Need several program courses? Choose a Program Pack.
@@ -93,7 +98,7 @@ These pages must explain:
 
 Use this wording when needed:
 
-VistaGrades creates AI-generated exam-style practice materials designed to support focused revision. The content should be used as practice support and may not always reflect every instructor, course section, or exam format.
+VistaGrades creates carefully selected AI-generated exam-style practice materials designed to support focused revision. The content should be used as practice support and may not always reflect every instructor, course section, or exam format.
 
 ## Design Rules
 
@@ -167,6 +172,9 @@ Apply these rules whenever creating or editing an exam-practice PDF. They do not
 - Avoid unnecessary page-by-page directions, detailed outline-location references, and repetitive explanations.
 - Retain the approved educational disclaimer and copyright footer.
 - Student email used for sign up on website must be included next to copyright.
+- All footer content must be centered except for the page number.
+- Every page in the answer key must have an indication in the header somewhere that these pages are part of the answer key.
+- All answer key text must be in black, without the title of the questions, only saying the question number is enough.
 - Do not claim that these are official exams or professor-provided questions.
 
 ### Verification
@@ -201,3 +209,13 @@ Apply these rules whenever creating or editing an exam-practice PDF. They do not
 
 
 Specific instructions from the user override these defaults.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->
